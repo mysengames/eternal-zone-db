@@ -33,6 +33,7 @@
     <div class="tabs">
       <div class="tab active" data-cat="daggers">短剣</div>
       <div class="tab" data-cat="swords">長剣</div>
+      <div class="tab" data-cat="axes">斧</div>
       <div class="tab" data-cat="armors">防具</div>
       <div class="tab" data-cat="monsters">モンスター</div>
     </div>
@@ -84,6 +85,7 @@
       let file = null;
       if (tab === 'daggers') file = 'data/items_daggers.json';
       else if (tab === 'swords') file = 'data/items_swords.json';
+      else if (tab === 'axes') file = 'data/items_axes.json';
       else if (tab === 'armors') file = 'data/items_armors.json';
       else if (tab === 'monsters') file = 'data/monsters.json';
 
