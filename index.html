@@ -8,8 +8,9 @@
   <meta name="theme-color" content="#111111">
   <link rel="apple-touch-icon" href="icons/icon-192.png">
   <style>
+    :root { color-scheme: dark; }
     body { font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,"Hiragino Sans","Noto Sans JP",sans-serif; margin:0; background:#0f1115; color:#f1f1f1; }
-    header { position:sticky; top:0; backdrop-filter:blur(8px); background:rgba(17,17,17,.85); padding:12px 16px; border-bottom:1px solid #222; }
+    header { position:sticky; top:0; backdrop-filter:blur(8px); background:rgba(17,17,17,.85); padding:12px 16px; border-bottom:1px solid #222; z-index:2; }
     h1 { font-size:16px; margin:0; }
     main { padding:16px; }
     .tabs { display:flex; gap:8px; margin:12px 0 16px; flex-wrap:wrap; }
@@ -17,8 +18,11 @@
     .tab.active { background:#1f2330; }
     .search { width:100%; padding:10px 12px; border-radius:8px; border:1px solid #333; background:#0f131a; color:#eee; outline:none; }
     ul { list-style:none; padding:0; margin:12px 0 80px; }
-    li { padding:10px 12px; border:1px solid #2a2a2a; border-radius:10px; margin-bottom:10px; background:#141822; }
-    .pill { font-size:12px; padding:2px 8px; border:1px solid #3a3a3a; border-radius:999px; margin-left:8px; }
+    li { padding:12px 14px; border:1px solid #2a2a2a; border-radius:10px; margin-bottom:12px; background:#141822; }
+    .pill { display:inline-block; font-size:12px; padding:2px 8px; border:1px solid #3a3a3a; border-radius:999px; margin:2px 6px 0 0; }
+    .row { margin-top:6px; font-size:13px; color:#cfcfcf; }
+    .dim { color:#9aa4b2; }
+    .kv { display:inline-block; margin-right:12px; }
     footer { position:fixed; bottom:0; left:0; right:0; background:#0f1115; border-top:1px solid #222; padding:10px 14px; color:#aaa; font-size:12px;}
     a { color:#87b3ff; }
   </style>
@@ -26,7 +30,6 @@
 <body>
   <header><h1>エターナルゾーンDB（Unofficial）</h1></header>
   <main>
-    <!-- カテゴリ選択タブ -->
     <div class="tabs">
       <div class="tab active" data-cat="daggers">短剣</div>
       <div class="tab" data-cat="swords">長剣</div>
@@ -40,95 +43,134 @@
   <footer>データや画像は非公式ファンメイド。権利は各権利者に帰属します。</footer>
 
   <script>
-    // ---- Service Worker 登録 ----
+    // ---- Service Worker ----
     if ('serviceWorker' in navigator) {
-      window.addEventListener('load', function() {
-        navigator.serviceWorker.register('./sw.js');
-      });
+      addEventListener('load', () => navigator.serviceWorker.register('./sw.js'));
     }
 
     // ---- refs / state ----
-    var $list = document.getElementById('list');
-    var $search = document.getElementById('search');
-    var $tabs = document.querySelectorAll('.tab');
+    const $list = document.getElementById('list');
+    const $search = document.getElementById('search');
+    const $tabs = document.querySelectorAll('.tab');
 
-    var state = { tab: 'daggers', data: [] };
+    const state = { tab: 'daggers', data: [] };
 
-    function normalize(s) { return (s || '').toString().toLowerCase().normalize('NFKC'); }
-    function esc(s) { return String(s == null ? '' : s); }
+    const normalize = (s) => (s || '').toString().toLowerCase().normalize('NFKC');
+    const esc = (s) => String(s == null ? '' : s);
 
-    // ---- タブ切替 ----
+    // ---- helpers ----
+    const chipJoin = (arr) => (Array.isArray(arr) && arr.length)
+      ? arr.map(v => `<span class="pill">${esc(v)}</span>`).join(' ')
+      : '';
+
+    const kvRowFromObject = (obj, label) => {
+      if (!obj || typeof obj !== 'object') return '';
+      const keys = Object.keys(obj).filter(k => obj[k] != null && obj[k] !== '');
+      if (!keys.length) return '';
+      const html = keys.map(k => `<span class="kv"><span class="dim">${esc(k)}:</span> ${esc(obj[k])}</span>`).join('');
+      return `<div class="row"><span class="dim">${label}:</span> ${html}</div>`;
+    };
+
+    // ---- tab ----
     function setTab(tab) {
       state.tab = tab;
       $tabs.forEach(t => t.classList.toggle('active', t.dataset.cat === tab));
-      try { localStorage.setItem('tab', tab); } catch (e) {}
+      try { localStorage.setItem('tab', tab); } catch {}
       loadData(tab);
     }
 
-    // ---- データロード ----
+    // ---- load ----
     async function loadData(tab) {
+      let file = null;
+      if (tab === 'daggers') file = 'data/items_daggers.json';
+      else if (tab === 'swords') file = 'data/items_swords.json';
+      else if (tab === 'armors') file = 'data/items_armors.json';
+      else if (tab === 'monsters') file = 'data/monsters.json';
+
+      if (!file) { state.data = []; render(); return; }
+
       try {
-        let file = null;
-        if (tab === 'daggers') file = 'data/items_daggers.json';
-        else if (tab === 'swords') file = 'data/items_swords.json';
-        else if (tab === 'armors') file = 'data/items_armors.json';
-        else if (tab === 'monsters') file = 'data/monsters.json';
-
-        if (!file) { state.data = []; render(); return; }
-
-        let res = await fetch(file);
+        const res = await fetch(file, { cache: 'no-cache' });
+        if (!res.ok) throw new Error(`${res.status} ${res.statusText}`);
         state.data = await res.json();
-        console.log(tab, 'loaded:', state.data.length);
-        render();
       } catch (e) {
-        console.error('Load error:', e);
+        console.warn('Load error:', e);
+        state.data = []; // fall back to empty
       }
+      render();
     }
 
-    // ---- 表示 ----
+    // ---- render ----
     function render() {
-      var q = normalize($search.value);
-      var filtered = q ? state.data.filter(function(o){ return normalize(o.name).includes(q); }) : state.data;
+      const q = normalize($search.value);
+      const data = state.data || [];
+      const filtered = q
+        ? data.filter(o => normalize([o.name, ...(o.affix||[]), ...(o.obtain||[])]
+            .join(' ')).includes(q))
+        : data;
 
       $list.innerHTML = '';
-      var max = Math.min(filtered.length, 500);
-      for (var i = 0; i < max; i++) {
-        var obj = filtered[i];
-        var li = document.createElement('li');
+      const max = Math.min(filtered.length, 800);
+      for (let i = 0; i < max; i++) {
+        const obj = filtered[i];
+        const li = document.createElement('li');
 
         if (state.tab === 'monsters') {
-          var drops = (obj.drops || []).map(function(d){
-            var nm = d.itemName || d.itemId || '?';
-            var rt = Math.round(((d.rate || 0) * 100));
-            return esc(nm) + '(' + rt + '%)';
+          const drops = (obj.drops || []).map(d => {
+            const nm = d.itemName || d.itemId || '?';
+            const rt = Math.round(((d.rate || 0) * 100));
+            return `${esc(nm)}(${rt}%)`;
           }).join(' / ') || '-';
+
           li.innerHTML =
-            '<div><strong>' + esc(obj.name) + '</strong>' +
-            '<span class="pill">エリア:' + esc(obj.area) + '</span>' +
-            '<span class="pill">Lv:' + esc(obj.level) + '</span>' +
-            '</div>' +
-            '<div style="margin-top:6px; font-size:13px; color:#bbb">ドロップ: ' + drops + '</div>';
+            `<div><strong>${esc(obj.name)}</strong>
+               <span class="pill">エリア:${esc(obj.area)}</span>
+               <span class="pill">Lv:${esc(obj.level)}</span>
+             </div>
+             <div class="row"><span class="dim">ドロップ:</span> ${esc(drops)}</div>`;
         } else {
-          li.innerHTML =
-            '<div><strong>' + esc(obj.name) + '</strong>' +
-            '<span class="pill">カテゴリ:' + esc(obj.category) + '</span>' +
-            '<span class="pill">R/N:' + esc(obj["R/N"]) + '</span>' +
-            '</div>';
+          // items: show all requested fields
+          const header =
+            `<div>
+               <strong>${esc(obj.name)}</strong>
+               <span class="pill">カテゴリ:${esc(obj.category || '-')}</span>
+               <span class="pill">R/N:${esc(obj["R/N"] || '-')}</span>
+               <span class="pill">Lv:${esc(obj.level || '-')}</span>
+             </div>`;
+
+          const attrsRow = kvRowFromObject(obj.attrs, '性能');
+          const priceRow = kvRowFromObject(obj.price, '価格');
+
+          const affixRow = (Array.isArray(obj.affix) && obj.affix.length)
+            ? `<div class="row"><span class="dim">付加:</span> ${chipJoin(obj.affix)}</div>` : '';
+
+          const obtainRow = (Array.isArray(obj.obtain) && obj.obtain.length)
+            ? `<div class="row"><span class="dim">入手:</span> ${chipJoin(obj.obtain)}</div>` : '';
+
+          li.innerHTML = header + attrsRow + priceRow + affixRow + obtainRow;
         }
 
         $list.appendChild(li);
       }
+
+      if (!filtered.length) {
+        const li = document.createElement('li');
+        li.innerHTML = `<div class="dim">該当なし</div>`;
+        $list.appendChild(li);
+      }
     }
 
-    // ---- イベント ----
+    // ---- events ----
     $tabs.forEach(t => t.addEventListener('click', () => setTab(t.dataset.cat)));
     $search.addEventListener('input', render);
 
-    // ---- 初期化 ----
+    // ---- init ----
     try {
-      var saved = localStorage.getItem('tab');
-      if (saved) setTab(saved); else setTab('daggers');
-    } catch (e) { setTab('daggers'); }
+      const saved = localStorage.getItem('tab');
+      setTab(saved || 'daggers');
+    } catch {
+      setTab('daggers');
+    }
   </script>
 </body>
 </html>
