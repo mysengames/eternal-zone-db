@@ -43,83 +43,88 @@
   </footer>
 
   <script>
-    // Register Service Worker (optional but recommended)
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', () => navigator.serviceWorker.register('./sw.js'));
-    }
+  // ----- state / refs -----
+  const $list   = document.getElementById('list');
+  const $search = document.getElementById('search');
+  const $tabItems    = document.getElementById('tab-items');
+  const $tabMonsters = document.getElementById('tab-monsters');
 
-    const $list = document.getElementById('list');
-    const $search = document.getElementById('search');
-    const $tabItems = document.getElementById('tab-items');
-    const $tabMonsters = document.getElementById('tab-monsters');
+  const state = { tab: 'items', items: [], monsters: [] };
 
-    let state = { tab: 'items', items: [], monsters: [] };
+  function normalize(s) { return (s || '').toString().toLowerCase().normalize('NFKC'); }
+  function esc(s) { return String(s == null ? '' : s); }
 
-    function setTab(tab) {
-      state.tab = tab;
-      $tabItems.classList.toggle('active', tab === 'items');
-      $tabMonsters.classList.toggle('active', tab === 'monsters');
-      render();
-      // persist tab
-      try { localStorage.setItem('tab', tab); } catch(e) {}
-    }
+  function setTab(tab) {
+    state.tab = tab;
+    $tabItems.classList.toggle('active', tab === 'items');
+    $tabMonsters.classList.toggle('active', tab === 'monsters');
+    try { localStorage.setItem('tab', tab); } catch (e) {}
+    render();
+  }
 
-    async function loadData() {
+  async function loadData() {
+    try {
       const [itemsRes, monstersRes] = await Promise.all([
         fetch('data/items.json'),
         fetch('data/monsters.json')
       ]);
       state.items = await itemsRes.json();
       state.monsters = await monstersRes.json();
+      // デバッグログ（必要なら F12 → Console で見える）
+      console.log('Items loaded:', state.items.length);
+      console.log('Monsters loaded:', state.monsters.length);
       render();
+    } catch (e) {
+      console.error('Load error:', e);
     }
+  }
 
-    function normalize(s) {
-      return (s || '').toString().toLowerCase().normalize('NFKC');
+  function render() {
+    const q = normalize($search.value);
+    const data = state.tab === 'items' ? state.items : state.monsters;
+    const filtered = q ? data.filter(o => normalize(o.name).includes(q)) : data;
+
+    $list.innerHTML = '';
+    for (const obj of filtered.slice(0, 500)) {
+      const li = document.createElement('li');
+
+      if (state.tab === 'items') {
+        const atk  = (obj.attrs && (obj.attrs.atk  ?? '-')) ?? '-';
+        const matk = (obj.attrs && (obj.attrs.matk ?? '-')) ?? '-';
+        li.innerHTML =
+          '<div><strong>' + esc(obj.name) + '</strong>' +
+          '<span class="pill">種別:' + esc(obj.type) + '</span>' +
+          '<span class="pill">レア:' + esc(obj.rarity) + '</span>' +
+          '</div>' +
+          '<div style="margin-top:6px; font-size:13px; color:#bbb">ATK:' + esc(atk) +
+          ' / MATK:' + esc(matk) + '</div>';
+      } else {
+        const drops = (obj.drops || [])
+          .map(d => esc((d.itemName || d.itemId || '?')) + '(' + Math.round((d.rate || 0) * 100) + '%)')
+          .join(' / ') || '-';
+        li.innerHTML =
+          '<div><strong>' + esc(obj.name) + '</strong>' +
+          '<span class="pill">エリア:' + esc(obj.area) + '</span>' +
+          '<span class="pill">Lv:' + esc(obj.level) + '</span>' +
+          '</div>' +
+          '<div style="margin-top:6px; font-size:13px; color:#bbb">ドロップ: ' + drops + '</div>';
+      }
+
+      $list.appendChild(li);
     }
+  }
 
-    function render() {
-      const q = normalize($search.value);
-      $list.innerHTML = '';
-      const data = state.tab === 'items' ? state.items : state.monsters;
-      data
-        .filter(obj => normalize(obj.name).includes(q))
-        .slice(0, 500)
-        .forEach(obj => {
-          const li = document.createElement('li');
-          if (state.tab === 'items') {
-            li.innerHTML = \`
-              <div><strong>\${obj.name}</strong>
-                <span class="pill">種別:\${obj.type}</span>
-                <span class="pill">レア:\${obj.rarity}</span>
-              </div>
-              <div style="margin-top:6px; font-size:13px; color:#bbb">ATK:\${obj.attrs?.atk ?? '-'} / MATK:\${obj.attrs?.matk ?? '-'}</div>
-            \`;
-          } else {
-            const drops = (obj.drops || []).map(d => \`\${d.itemName ?? d.itemId}(\${Math.round((d.rate||0)*100)}%)\`).join(' / ') || '-';
-            li.innerHTML = \`
-              <div><strong>\${obj.name}</strong>
-                <span class="pill">エリア:\${obj.area}</span>
-                <span class="pill">Lv:\${obj.level ?? '-'}</span>
-              </div>
-              <div style="margin-top:6px; font-size:13px; color:#bbb">ドロップ: \${drops}</div>
-            \`;
-          }
-          $list.appendChild(li);
-        });
-    }
+  // events
+  $tabItems.addEventListener('click', () => setTab('items'));
+  $tabMonsters.addEventListener('click', () => setTab('monsters'));
+  $search.addEventListener('input', render);
 
-    $tabItems.addEventListener('click', () => setTab('items'));
-    $tabMonsters.addEventListener('click', () => setTab('monsters'));
-    $search.addEventListener('input', render);
+  // restore tab
+  try {
+    const saved = localStorage.getItem('tab');
+    if (saved) setTab(saved); else setTab('items');
+  } catch (e) { setTab('items'); }
 
-    // restore tab
-    try {
-      const saved = localStorage.getItem('tab');
-      if (saved) setTab(saved);
-    } catch(e) {}
-
-    loadData();
-  </script>
-</body>
-</html>
+  // kick off
+  loadData();
+</script>
