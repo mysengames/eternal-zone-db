@@ -37,7 +37,7 @@
       <div class="tab" data-cat="monsters">モンスター</div>
     </div>
 
-    <input id="search" class="search" placeholder="名前で検索..." autocomplete="off" />
+    <input id="search" class="search" placeholder="名前・付加・入手・素材・加工で検索..." autocomplete="off" />
     <ul id="list"></ul>
   </main>
   <footer>データや画像は非公式ファンメイド。権利は各権利者に帰属します。</footer>
@@ -105,8 +105,13 @@
       const q = normalize($search.value);
       const data = state.data || [];
       const filtered = q
-        ? data.filter(o => normalize([o.name, ...(o.affix||[]), ...(o.obtain||[])]
-            .join(' ')).includes(q))
+        ? data.filter(o => normalize([
+            o.name,
+            ...(o.affix||[]),
+            ...(o.obtain||[]),
+            ...(o.materials||[]),   // 検索対象: 素材
+            ...(o.processing||[])   // 検索対象: 加工
+          ].join(' ')).includes(q))
         : data;
 
       $list.innerHTML = '';
@@ -141,13 +146,19 @@
           const attrsRow = kvRowFromObject(obj.attrs, '性能');
           const priceRow = kvRowFromObject(obj.price, '価格');
 
+          const materialsRow = (Array.isArray(obj.materials) && obj.materials.length)
+            ? `<div class="row"><span class="dim">素材:</span> ${chipJoin(obj.materials)}</div>` : '';
+
+          const processingRow = (Array.isArray(obj.processing) && obj.processing.length)
+            ? `<div class="row"><span class="dim">加工:</span> ${chipJoin(obj.processing)}</div>` : '';
+
           const affixRow = (Array.isArray(obj.affix) && obj.affix.length)
             ? `<div class="row"><span class="dim">付加:</span> ${chipJoin(obj.affix)}</div>` : '';
 
           const obtainRow = (Array.isArray(obj.obtain) && obj.obtain.length)
             ? `<div class="row"><span class="dim">入手:</span> ${chipJoin(obj.obtain)}</div>` : '';
 
-          li.innerHTML = header + attrsRow + priceRow + affixRow + obtainRow;
+          li.innerHTML = header + attrsRow + priceRow + materialsRow + processingRow + affixRow + obtainRow;
         }
 
         $list.appendChild(li);
