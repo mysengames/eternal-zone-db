@@ -1,60 +1,134 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <title>エターナルゾーンDB</title>
-  <link rel="manifest" href="./manifest.json">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>エターナルゾーンDB（Unofficial）</title>
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#111111">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <style>
+    body { font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,"Hiragino Sans","Noto Sans JP",sans-serif; margin:0; background:#0f1115; color:#f1f1f1; }
+    header { position:sticky; top:0; backdrop-filter:blur(8px); background:rgba(17,17,17,.85); padding:12px 16px; border-bottom:1px solid #222; }
+    h1 { font-size:16px; margin:0; }
+    main { padding:16px; }
+    .tabs { display:flex; gap:8px; margin:12px 0 16px; flex-wrap:wrap; }
+    .tab { padding:8px 12px; border:1px solid #333; border-radius:8px; cursor:pointer; }
+    .tab.active { background:#1f2330; }
+    .search { width:100%; padding:10px 12px; border-radius:8px; border:1px solid #333; background:#0f131a; color:#eee; outline:none; }
+    ul { list-style:none; padding:0; margin:12px 0 80px; }
+    li { padding:10px 12px; border:1px solid #2a2a2a; border-radius:10px; margin-bottom:10px; background:#141822; }
+    .pill { font-size:12px; padding:2px 8px; border:1px solid #3a3a3a; border-radius:999px; margin-left:8px; }
+    footer { position:fixed; bottom:0; left:0; right:0; background:#0f1115; border-top:1px solid #222; padding:10px 14px; color:#aaa; font-size:12px;}
+    a { color:#87b3ff; }
+  </style>
 </head>
 <body>
-  <h1>エターナルゾーン 装備DB</h1>
+  <header><h1>エターナルゾーンDB（Unofficial）</h1></header>
+  <main>
+    <!-- カテゴリ選択タブ -->
+    <div class="tabs">
+      <div class="tab active" data-cat="daggers">短剣</div>
+      <div class="tab" data-cat="swords">長剣</div>
+      <div class="tab" data-cat="armors">防具</div>
+      <div class="tab" data-cat="monsters">モンスター</div>
+    </div>
 
-  <!-- カテゴリボタン -->
-  <div id="categories">
-    <button onclick="loadCategory('items_daggers.json')">短剣</button>
-    <!-- 後で長剣や防具も増やせる -->
-  </div>
-
-  <!-- 検索ボックス -->
-  <input type="text" id="search" placeholder="検索...">
-  <ul id="results"></ul>
+    <input id="search" class="search" placeholder="名前で検索..." autocomplete="off" />
+    <ul id="list"></ul>
+  </main>
+  <footer>データや画像は非公式ファンメイド。権利は各権利者に帰属します。</footer>
 
   <script>
-    let currentItems = [];
-
-    // カテゴリ読み込み
-    function loadCategory(file) {
-      fetch('./data/' + file)
-        .then(res => res.json())
-        .then(data => {
-          currentItems = data;
-          renderItems(currentItems);
-        });
-    }
-
-    // 検索イベント
-    document.getElementById('search').addEventListener('input', e => {
-      const q = e.target.value.toLowerCase();
-      const filtered = currentItems.filter(it => it.name.toLowerCase().includes(q));
-      renderItems(filtered);
-    });
-
-    // 表示
-    function renderItems(items) {
-      const ul = document.getElementById('results');
-      ul.innerHTML = '';
-      items.forEach(obj => {
-        const li = document.createElement('li');
-        li.innerHTML = `
-          <strong>${obj.name}</strong> 
-          [${obj.category}] 
-          <span class="pill">R/N: ${obj["R/N"]}</span>
-        `;
-        ul.appendChild(li);
+    // ---- Service Worker 登録 ----
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function() {
+        navigator.serviceWorker.register('./sw.js');
       });
     }
 
-    // 初期ロード（短剣）
-    loadCategory('items_daggers.json');
+    // ---- refs / state ----
+    var $list = document.getElementById('list');
+    var $search = document.getElementById('search');
+    var $tabs = document.querySelectorAll('.tab');
+
+    var state = { tab: 'daggers', data: [] };
+
+    function normalize(s) { return (s || '').toString().toLowerCase().normalize('NFKC'); }
+    function esc(s) { return String(s == null ? '' : s); }
+
+    // ---- タブ切替 ----
+    function setTab(tab) {
+      state.tab = tab;
+      $tabs.forEach(t => t.classList.toggle('active', t.dataset.cat === tab));
+      try { localStorage.setItem('tab', tab); } catch (e) {}
+      loadData(tab);
+    }
+
+    // ---- データロード ----
+    async function loadData(tab) {
+      try {
+        let file = null;
+        if (tab === 'daggers') file = 'data/items_daggers.json';
+        else if (tab === 'swords') file = 'data/items_swords.json';
+        else if (tab === 'armors') file = 'data/items_armors.json';
+        else if (tab === 'monsters') file = 'data/monsters.json';
+
+        if (!file) { state.data = []; render(); return; }
+
+        let res = await fetch(file);
+        state.data = await res.json();
+        console.log(tab, 'loaded:', state.data.length);
+        render();
+      } catch (e) {
+        console.error('Load error:', e);
+      }
+    }
+
+    // ---- 表示 ----
+    function render() {
+      var q = normalize($search.value);
+      var filtered = q ? state.data.filter(function(o){ return normalize(o.name).includes(q); }) : state.data;
+
+      $list.innerHTML = '';
+      var max = Math.min(filtered.length, 500);
+      for (var i = 0; i < max; i++) {
+        var obj = filtered[i];
+        var li = document.createElement('li');
+
+        if (state.tab === 'monsters') {
+          var drops = (obj.drops || []).map(function(d){
+            var nm = d.itemName || d.itemId || '?';
+            var rt = Math.round(((d.rate || 0) * 100));
+            return esc(nm) + '(' + rt + '%)';
+          }).join(' / ') || '-';
+          li.innerHTML =
+            '<div><strong>' + esc(obj.name) + '</strong>' +
+            '<span class="pill">エリア:' + esc(obj.area) + '</span>' +
+            '<span class="pill">Lv:' + esc(obj.level) + '</span>' +
+            '</div>' +
+            '<div style="margin-top:6px; font-size:13px; color:#bbb">ドロップ: ' + drops + '</div>';
+        } else {
+          li.innerHTML =
+            '<div><strong>' + esc(obj.name) + '</strong>' +
+            '<span class="pill">カテゴリ:' + esc(obj.category) + '</span>' +
+            '<span class="pill">R/N:' + esc(obj["R/N"]) + '</span>' +
+            '</div>';
+        }
+
+        $list.appendChild(li);
+      }
+    }
+
+    // ---- イベント ----
+    $tabs.forEach(t => t.addEventListener('click', () => setTab(t.dataset.cat)));
+    $search.addEventListener('input', render);
+
+    // ---- 初期化 ----
+    try {
+      var saved = localStorage.getItem('tab');
+      if (saved) setTab(saved); else setTab('daggers');
+    } catch (e) { setTab('daggers'); }
   </script>
 </body>
 </html>
