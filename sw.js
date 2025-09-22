@@ -8,10 +8,13 @@ const PRECACHE = [
   './manifest.json',
   './icons/icon-192.png',
   './icons/icon-512.png',
-  // 短剣＋長剣をプリキャッシュ
+  // 武器をプリキャッシュ
   './data/items_daggers.json',
   './data/items_swords.json',
   './data/items_axes.json',
+  './data/items_hammer.json',
+  './data/items_rods.json',
+  './data/items_bows.json',
   // モンスターも使うなら
   './data/monsters.json'
 ];
