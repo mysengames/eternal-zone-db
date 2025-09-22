@@ -1,7 +1,3 @@
-# Build a JSON array for "短剣" items from the user's provided data.
-import json, os, textwrap, re, pandas as pd
-from caas_jupyter_tools import display_dataframe_to_user
-
 items = [
   {
     "id": "dag001",
