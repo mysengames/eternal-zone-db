@@ -1,0 +1,114 @@
+[
+  {
+    "id": "rod001",
+    "name": "ワンド",
+    "category": "杖",
+    "R/N": "-",
+    "level": "1",
+    "attrs": {"DMG": "3", "DELAY": "50", "D/D": "0.060"},
+    "price": {"買値": "276B", "売値": "76B"},
+    "affix": [],
+    "obtain": ["初期武器(クレリック・メイジ)", "マナ区GEORGE"]
+  },
+  {
+    "id": "rod002",
+    "name": "テイルロッド",
+    "category": "杖",
+    "R/N": "N",
+    "level": "1~",
+    "attrs": {"DMG": "15", "DELAY": "50", "D/D": "0.300"},
+    "price": {"売値": "2,000B"},
+    "affix": ["火攻+5", "WIS+5"],
+    "obtain": ["宝箱(ホープル村)"]
+  },
+  {
+    "id": "rod003",
+    "name": "ダスクロッド",
+    "category": "杖",
+    "R/N": "N",
+    "level": "1→30",
+    "attrs": {"DMG": "3~7", "DELAY": "55", "D/D": "0.127"},
+    "price": {"売値": "2,000B"},
+    "affix": ["魔命+4", "WIL1~5"],
+    "obtain": ["ゴブリンメダル×10"]
+  },
+  {
+    "id": "rod004",
+    "name": "自縛の杖",
+    "category": "杖",
+    "R/N": "N",
+    "level": "1→30",
+    "attrs": {},
+    "price": {},
+    "affix": ["魔攻3～8", "魔命3～8"],
+    "obtain": ["MAGIA LEMURES"]
+  },
+  {
+    "id": "rod005",
+    "name": "オリジンスタッフ",
+    "category": "杖",
+    "R/N": "N",
+    "level": "1→50",
+    "attrs": {"DMG": "6~30", "DELAY": "48", "D/D": "0.625"},
+    "price": {"craft_cost": "8,000B", "売値": "B"},
+    "affix": ["WIS3~11", "魔攻+8", "魔命+8"],
+    "materials": ["ヴェノモスロッド×1", "予言の杖×1", "コバルトバー×20", "阿修羅の腕×4", "ライトストーン×20", "オウラの巨塊×1"],
+    "obtain": ["ホープル村ORI"]
+  },
+  {
+    "id": "rod006",
+    "name": "ブロンズロッド",
+    "category": "杖",
+    "R/N": "-",
+    "level": "7",
+    "attrs": {"DMG": "6", "DELAY": "55", "D/D": "0.109"},
+    "price": {"買値": "538B", "売値": "232B"},
+    "affix": ["WIS+1"],
+    "obtain": ["アック区ADOL", "北フラップUNG"]
+  },
+  {
+    "id": "rod007",
+    "name": "アイアンロッド",
+    "category": "杖",
+    "R/N": "-",
+    "level": "13",
+    "attrs": {"DMG": "9", "DELAY": "50", "D/D": "0.180"},
+    "price": {"買値": "1,502B", "売値": "753B"},
+    "affix": ["WIS+2"],
+    "obtain": ["ラプトKONDY"]
+  },
+  {
+    "id": "rod008",
+    "name": "オウラフルワンド",
+    "category": "杖",
+    "R/N": "-",
+    "level": "18",
+    "attrs": {"DMG": "10", "DELAY": "48", "D/D": "0.208"},
+    "price": {"買値": "2,411B", "売値": "1,281B"},
+    "affix": ["WIS+4"],
+    "obtain": ["ラプトKONDY"]
+  },
+  {
+    "id": "rod009",
+    "name": "聖者の杖",
+    "category": "杖",
+    "R/N": "R",
+    "level": "19",
+    "attrs": {"DMG": "11", "DELAY": "50", "D/D": "0.220"},
+    "price": {"売値": "1,545B"},
+    "affix": ["SP+10", "ヒール回復量+10%"],
+    "obtain": ["SLANE'S DRAKE(魔窟中層)"],
+    "processing": ["予言の杖"]
+  },
+  {
+    "id": "rod010",
+    "name": "魔人の杖",
+    "category": "杖",
+    "R/N": "R",
+    "level": "20",
+    "attrs": {"DMG": "12", "DELAY": "50", "D/D": "0.240"},
+    "price": {"売値": "1,684B"},
+    "affix": ["魔攻+5", "WIS+3"],
+    "obtain": ["LICH OF SLANE(魔窟中層)"]
+  }
+]
