@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>エターナルゾーンDB（Unofficial）</title>
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#111111">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, "Hiragino Sans", "Noto Sans JP", sans-serif; margin:0; background:#0f1115; color:#f1f1f1; }
+    header { position:sticky; top:0; backdrop-filter: blur(8px); background:rgba(17,17,17,.85); padding:12px 16px; border-bottom:1px solid #222; }
+    h1 { font-size:16px; margin:0; }
+    main { padding:16px; }
+    .tabs { display:flex; gap:8px; margin:12px 0 16px; }
+    .tab { padding:8px 12px; border:1px solid #333; border-radius:8px; cursor:pointer; }
+    .tab.active { background:#1f2330; }
+    .search { width:100%; padding:10px 12px; border-radius:8px; border:1px solid #333; background:#0f131a; color:#eee; outline:none; }
+    ul { list-style:none; padding:0; margin:12px 0 80px; }
+    li { padding:10px 12px; border:1px solid #2a2a2a; border-radius:10px; margin-bottom:10px; background:#141822; }
+    .pill { font-size:12px; padding:2px 8px; border:1px solid #3a3a3a; border-radius:999px; margin-left:8px; }
+    footer { position:fixed; bottom:0; left:0; right:0; background:#0f1115; border-top:1px solid #222; padding:10px 14px; color:#aaa; font-size:12px;}
+    a { color:#87b3ff; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>エターナルゾーンDB（Unofficial）</h1>
+  </header>
+  <main>
+    <div class="tabs">
+      <div class="tab active" id="tab-items">装備</div>
+      <div class="tab" id="tab-monsters">モンスター</div>
+    </div>
+
+    <input id="search" class="search" placeholder="名前で検索…" autocomplete="off" />
+
+    <ul id="list"></ul>
+  </main>
+
+  <footer>
+    オフライン対応／ホーム画面追加に対応（PWA）。データや画像は非公式ファンメイド。権利は各権利者に帰属します。
+  </footer>
+
+  <script>
+    // Register Service Worker (optional but recommended)
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => navigator.serviceWorker.register('./sw.js'));
+    }
+
+    const $list = document.getElementById('list');
+    const $search = document.getElementById('search');
+    const $tabItems = document.getElementById('tab-items');
+    const $tabMonsters = document.getElementById('tab-monsters');
+
+    let state = { tab: 'items', items: [], monsters: [] };
+
+    function setTab(tab) {
+      state.tab = tab;
+      $tabItems.classList.toggle('active', tab === 'items');
+      $tabMonsters.classList.toggle('active', tab === 'monsters');
+      render();
+      // persist tab
+      try { localStorage.setItem('tab', tab); } catch(e) {}
+    }
+
+    async function loadData() {
+      const [itemsRes, monstersRes] = await Promise.all([
+        fetch('data/items.json'),
+        fetch('data/monsters.json')
+      ]);
+      state.items = await itemsRes.json();
+      state.monsters = await monstersRes.json();
+      render();
+    }
+
+    function normalize(s) {
+      return (s || '').toString().toLowerCase().normalize('NFKC');
+    }
+
+    function render() {
+      const q = normalize($search.value);
+      $list.innerHTML = '';
+      const data = state.tab === 'items' ? state.items : state.monsters;
+      data
+        .filter(obj => normalize(obj.name).includes(q))
+        .slice(0, 500)
+        .forEach(obj => {
+          const li = document.createElement('li');
+          if (state.tab === 'items') {
+            li.innerHTML = \`
+              <div><strong>\${obj.name}</strong>
+                <span class="pill">種別:\${obj.type}</span>
+                <span class="pill">レア:\${obj.rarity}</span>
+              </div>
+              <div style="margin-top:6px; font-size:13px; color:#bbb">ATK:\${obj.attrs?.atk ?? '-'} / MATK:\${obj.attrs?.matk ?? '-'}</div>
+            \`;
+          } else {
+            const drops = (obj.drops || []).map(d => \`\${d.itemName ?? d.itemId}(\${Math.round((d.rate||0)*100)}%)\`).join(' / ') || '-';
+            li.innerHTML = \`
+              <div><strong>\${obj.name}</strong>
+                <span class="pill">エリア:\${obj.area}</span>
+                <span class="pill">Lv:\${obj.level ?? '-'}</span>
+              </div>
+              <div style="margin-top:6px; font-size:13px; color:#bbb">ドロップ: \${drops}</div>
+            \`;
+          }
+          $list.appendChild(li);
+        });
+    }
+
+    $tabItems.addEventListener('click', () => setTab('items'));
+    $tabMonsters.addEventListener('click', () => setTab('monsters'));
+    $search.addEventListener('input', render);
+
+    // restore tab
+    try {
+      const saved = localStorage.getItem('tab');
+      if (saved) setTab(saved);
+    } catch(e) {}
+
+    loadData();
+  </script>
+</body>
+</html>

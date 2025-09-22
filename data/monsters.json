@@ -1,0 +1,41 @@
+[
+  {
+    "id": "mon001",
+    "name": "スライム",
+    "area": "草原",
+    "level": 3,
+    "drops": [
+      {
+        "itemId": "itm001",
+        "itemName": "ブロンズソード",
+        "rate": 0.05
+      }
+    ]
+  },
+  {
+    "id": "mon002",
+    "name": "ウルフ",
+    "area": "森",
+    "level": 8,
+    "drops": [
+      {
+        "itemId": "itm002",
+        "itemName": "アイアンシールド",
+        "rate": 0.02
+      }
+    ]
+  },
+  {
+    "id": "mon003",
+    "name": "ウィスプ",
+    "area": "洞窟",
+    "level": 12,
+    "drops": [
+      {
+        "itemId": "itm003",
+        "itemName": "マジックスタッフ",
+        "rate": 0.01
+      }
+    ]
+  }
+]

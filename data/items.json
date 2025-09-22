@@ -1,0 +1,29 @@
+[
+  {
+    "id": "itm001",
+    "name": "ブロンズソード",
+    "rarity": "N",
+    "type": "weapon",
+    "attrs": {
+      "atk": 12
+    }
+  },
+  {
+    "id": "itm002",
+    "name": "アイアンシールド",
+    "rarity": "R",
+    "type": "shield",
+    "attrs": {
+      "atk": 0
+    }
+  },
+  {
+    "id": "itm003",
+    "name": "マジックスタッフ",
+    "rarity": "SR",
+    "type": "weapon",
+    "attrs": {
+      "matk": 22
+    }
+  }
+]
