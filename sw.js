@@ -1,5 +1,5 @@
 // ★キャッシュ名は必ず更新（差し替え時に変える）
-const CACHE_NAME = 'ezdb-v20';
+const CACHE_NAME = 'ezdb-v21';
 
 // プリキャッシュするファイル
 const PRECACHE = [
@@ -12,7 +12,7 @@ const PRECACHE = [
   './data/items_daggers.json',
   './data/items_swords.json',
   './data/items_axes.json',
-  './data/items_hammer.json',
+  './data/items_hammers.json',
   './data/items_rods.json',
   './data/items_bows.json',
   // モンスターも使うなら
