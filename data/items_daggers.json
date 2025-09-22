@@ -1,0 +1,515 @@
+# Build a JSON array for "短剣" items from the user's provided data.
+import json, os, textwrap, re, pandas as pd
+from caas_jupyter_tools import display_dataframe_to_user
+
+items = [
+  {
+    "id": "dag001",
+    "name": "ブロンズナイフ",
+    "category": "短剣",
+    "R/N": "-",
+    "level": "1",
+    "attrs": {"dmg": "4", "dly": "45", "dd": "0.089"},
+    "price": {"buy": "176B", "sell": "76B"},
+    "affix": [],
+    "obtain": ["初期装備(ファイター・スカウト)", "ホープルFAITH", "アック区ADOL"]
+  },
+  {
+    "id": "dag002",
+    "name": "テイルエッジ",
+    "category": "短剣",
+    "R/N": "N",
+    "level": "1~",
+    "attrs": {"dmg": "15", "dly": "40", "dd": "0.375"},
+    "price": {"sell": "2,000B"},
+    "affix": ["PROC:HP吸収"],
+    "obtain": ["宝箱(ホープル村)"]
+  },
+  {
+    "id": "dag003",
+    "name": "ダスクダガー",
+    "category": "短剣",
+    "R/N": "N",
+    "level": "1→30",
+    "attrs": {"dmg": "4~17", "dly": "42", "dd": "0.404"},
+    "price": {"sell": "2,000B"},
+    "affix": ["回避+3", "WIS1~2"],
+    "obtain": ["ゴブリンメダル×10"]
+  },
+  {
+    "id": "dag004",
+    "name": "自縛の短剣",
+    "category": "短剣",
+    "R/N": "N",
+    "level": "1→30",
+    "attrs": {},
+    "price": {},
+    "affix": ["攻2～7", "DEX1～13"],
+    "obtain": ["INCURSIO LEMURES"]
+  },
+  {
+    "id": "dag005",
+    "name": "オリジンダガー",
+    "category": "短剣",
+    "R/N": "N",
+    "level": "1→50",
+    "attrs": {"dmg": "5~27", "dly": "45", "dd": "0.600"},
+    "price": {"craft_cost": "8,000B", "sell": "B"},
+    "affix": ["WIS2~5", "PROC:防御DOWN"],
+    "materials": ["デュアルエッジ×1","骨喰の短剣×1","クロムバー×20","ダークストーン×20","ムッシュマッヘの牙×6","オウラの巨塊×1"],
+    "obtain": ["ホープル村ORI"]
+  },
+  {
+    "id": "dag006",
+    "name": "ブロンズダガー",
+    "category": "短剣",
+    "R/N": "-",
+    "level": "8",
+    "attrs": {"dmg": "7", "dly": "45", "dd": "0.156"},
+    "price": {"buy": "582B", "sell": "272B"},
+    "affix": [],
+    "obtain": ["アック区ADOL","北フラップUNG"]
+  },
+  {
+    "id": "dag007",
+    "name": "シャープダガー",
+    "category": "短剣",
+    "R/N": "R/N",
+    "level": "10",
+    "attrs": {"dmg": "6", "dly": "37", "dd": "0.162"},
+    "price": {"sell": "298B"},
+    "affix": ["DEX+1","AGI+1"],
+    "obtain": ["GOBLIN EATER(西グリディアナ)"]
+  },
+  {
+    "id": "dag008",
+    "name": "アイアンナイフ",
+    "category": "短剣",
+    "R/N": "-",
+    "level": "13",
+    "attrs": {"dmg": "9", "dly": "45", "dd": "0.200"},
+    "price": {"buy": "1,462B", "sell": "740B"},
+    "affix": [],
+    "obtain": ["ラプトKONDY"]
+  },
+  {
+    "id": "dag009",
+    "name": "キーンダガー",
+    "category": "短剣",
+    "R/N": "R",
+    "level": "15",
+    "attrs": {"dmg": "10", "dly": "37", "dd": "0.270"},
+    "price": {"sell": "465B"},
+    "affix": ["攻+5","DEX+2"],
+    "obtain": ["GOLA PRIVATE(オールドラプト)"]
+  },
+  {
+    "id": "dag010",
+    "name": "アイアンダガー",
+    "category": "短剣",
+    "R/N": "-",
+    "level": "17",
+    "attrs": {"dmg": "12", "dly": "45", "dd": "0.267"},
+    "price": {"buy": "2,645B", "sell": "1,368B"},
+    "affix": [],
+    "obtain": ["ラプトKONDY"]
+  },
+  {
+    "id": "dag011",
+    "name": "バーグラーナイフ",
+    "category": "短剣",
+    "R/N": "R",
+    "level": "19",
+    "attrs": {"dmg": "13", "dly": "44", "dd": "0.295"},
+    "price": {"sell": "945B"},
+    "affix": ["命中+3","クリティカル+3%"],
+    "obtain": ["GOLA PRIVATE E-2(オールドラプト)"]
+  },
+  {
+    "id": "dag012",
+    "name": "スチールナイフ",
+    "category": "短剣",
+    "R/N": "-",
+    "level": "23",
+    "attrs": {"dmg": "15", "dly": "45", "dd": "0.333"},
+    "price": {"buy": "8,455B", "sell": "2,113B"},
+    "affix": ["攻+5"],
+    "obtain": ["ラプトKONDY"]
+  },
+  {
+    "id": "dag013",
+    "name": "アージェントダガー",
+    "category": "短剣",
+    "R/N": "R",
+    "level": "24",
+    "attrs": {"dmg": "14", "dly": "45", "dd": "0.311"},
+    "price": {"sell": "1,842B"},
+    "affix": ["魔命+2","WIS+2"],
+    "obtain": ["CORPORAL DADA(魔窟下層)"]
+  },
+  {
+    "id": "dag014",
+    "name": "ブラッディナイフ",
+    "category": "短剣",
+    "R/N": "R/N",
+    "level": "26",
+    "attrs": {"dmg": "15", "dly": "45", "dd": "0.333"},
+    "price": {"sell": "2,089B"},
+    "affix": ["PROC:HP吸収"],
+    "obtain": ["VAMPIRE SLUG(エルト)"],
+    "processing": ["骨喰の短剣"]
+  },
+  {
+    "id": "dag015",
+    "name": "フレイムナイフ",
+    "category": "短剣",
+    "R/N": "R",
+    "level": "27",
+    "attrs": {"dmg": "15", "dly": "45", "dd": "0.333"},
+    "price": {"sell": "2,035B"},
+    "affix": ["PROC:火属性DMG"],
+    "obtain": ["宝箱(赤色の魔石)"]
+  },
+  {
+    "id": "dag016",
+    "name": "スチールダガー",
+    "category": "短剣",
+    "R/N": "-",
+    "level": "28",
+    "attrs": {"dmg": "16", "dly": "45", "dd": "0.356"},
+    "price": {"buy": "13,875B", "sell": "3,468B"},
+    "affix": ["命中+2","攻+5"],
+    "obtain": ["スナンタウンXEON"]
+  },
+  {
+    "id": "dag017",
+    "name": "チンクエディア",
+    "category": "短剣",
+    "R/N": "R/N",
+    "level": "29",
+    "attrs": {"dmg": "14", "dly": "37", "dd": "0.378"},
+    "price": {"sell": "2,698B"},
+    "affix": ["DEX+1","AGI+1","敵意+2"],
+    "obtain": ["DROWNED SOR.BOLTZ(サキレス)"]
+  },
+  {
+    "id": "dag018",
+    "name": "メイルブレイカー",
+    "category": "短剣",
+    "R/N": "-",
+    "level": "30",
+    "attrs": {"dmg": "16", "dly": "45", "dd": "0.356"},
+    "price": {"sell": "1,844B"},
+    "affix": ["命中+1","PROC:防御DOWN"],
+    "obtain": ["XOLOTL(ラプト防衛作戦)"],
+    "processing": ["キャスターキラー"]
+  },
+  {
+    "id": "dag019",
+    "name": "ソワールダガー",
+    "category": "短剣",
+    "R/N": "N",
+    "level": "30→50",
+    "attrs": {"dmg": "10~27", "dly": "34", "dd": "0.675"},
+    "price": {"sell": "2,000B"},
+    "affix": ["魔命+3","WIS2~6"],
+    "obtain": ["ゴブリンメダル×20"]
+  },
+  {
+    "id": "dag020",
+    "name": "老練の短剣",
+    "category": "短剣",
+    "R/N": "N",
+    "level": "30~",
+    "attrs": {"dmg": "16~27", "dly": "34", "dd": "0.794"},
+    "price": {"sell": "B"},
+    "affix": ["攻撃速度+3","PROC:風属性DMG"],
+    "obtain": ["ザインPZ(鍛れんされた鉱石75個)"]
+  },
+  {
+    "id": "dag021",
+    "name": "ミスリルナイフ",
+    "category": "短剣",
+    "R/N": "-",
+    "level": "33",
+    "attrs": {"dmg": "17", "dly": "44", "dd": "0.386"},
+    "price": {"buy": "26,950B", "sell": "4,545B"},
+    "affix": ["詠唱妨害+5"],
+    "obtain": ["メノアム地区SABANA"]
+  },
+  {
+    "id": "dag022",
+    "name": "アセイミダガー",
+    "category": "短剣",
+    "R/N": "R/N",
+    "level": "34",
+    "attrs": {"dmg": "16", "dly": "45", "dd": "0.356"},
+    "price": {"sell": "3,442B"},
+    "affix": ["魔命+3","WIS+3"],
+    "obtain": ["SERGEANT ZOOZOO(魔窟下層 P)"],
+    "processing": ["キャスターキラー"]
+  },
+  {
+    "id": "dag023",
+    "name": "ミスリルダガー",
+    "category": "短剣",
+    "R/N": "-",
+    "level": "38",
+    "attrs": {"dmg": "18", "dly": "45", "dd": "0.400"},
+    "price": {"buy": "45,750B", "sell": "4,698B"},
+    "affix": ["DEX+2","AGI+2"],
+    "obtain": ["メノアム地区SABANA"]
+  },
+  {
+    "id": "dag024",
+    "name": "サイレンスダガー",
+    "category": "短剣",
+    "R/N": "R/N",
+    "level": "39",
+    "attrs": {"dmg": "15", "dly": "37", "dd": "0.405"},
+    "price": {"sell": "4,183B"},
+    "affix": ["PROC:沈黙"],
+    "obtain": ["宝箱(黒色の魔石)"]
+  },
+  {
+    "id": "dag025",
+    "name": "アサシンナイフ",
+    "category": "短剣",
+    "R/N": "R/N",
+    "level": "40",
+    "attrs": {"dmg": "19", "dly": "45", "dd": "0.422"},
+    "price": {"sell": "3,945B"},
+    "affix": ["DEX+3","クリティカル+4％"],
+    "obtain": ["SOULSTINGER(ダラッカ害虫駆除)"],
+    "processing": ["デュアルエッジ"]
+  },
+  {
+    "id": "dag026",
+    "name": "マインゴージュ",
+    "category": "短剣",
+    "R/N": "N",
+    "level": "41",
+    "attrs": {"dmg": "20", "dly": "46", "dd": "0.435"},
+    "price": {"buy": "58,200B", "sell": "6,825B"},
+    "affix": ["DEX+1"],
+    "obtain": ["メノアム地区SABANA"]
+  },
+  {
+    "id": "dag027",
+    "name": "首狩りの短剣",
+    "category": "短剣",
+    "R/N": "R/N",
+    "level": "44",
+    "attrs": {"dmg": "20", "dly": "45", "dd": "0.444"},
+    "price": {"sell": "3,945B"},
+    "affix": ["DEX+2","AGI+2","クリティカル+7％"],
+    "obtain": ["EXECUTIONER(イスコ島嶼)","PRISON WARDEN(ゴライエ牢 P)"],
+    "processing": ["骨喰の短剣"]
+  },
+  {
+    "id": "dag028",
+    "name": "フェアリーナイフ",
+    "category": "短剣",
+    "R/N": "R/N",
+    "level": "44",
+    "attrs": {"dmg": "17", "dly": "45", "dd": "0.378"},
+    "price": {"sell": "7,264B"},
+    "affix": ["WIS+2","魔命+5"],
+    "obtain": ["オウラのかけら×50(樹海奥)"]
+  },
+  {
+    "id": "dag029",
+    "name": "グラファイトダガー",
+    "category": "短剣",
+    "R/N": "-",
+    "level": "45",
+    "attrs": {"dmg": "21", "dly": "46", "dd": "0.457"},
+    "price": {"buy": "69,800B", "sell": "5,130B"},
+    "affix": ["AGI+3"],
+    "obtain": ["ゴライエDOMDOO"]
+  },
+  {
+    "id": "dag030",
+    "name": "キャスターキラー",
+    "category": "短剣",
+    "R/N": "R/N",
+    "level": "46",
+    "attrs": {"dmg": "22", "dly": "46", "dd": "0.478"},
+    "price": {"craft_cost": "45,000B", "sell": "7,325B"},
+    "affix": ["攻+4","命中+2","詠唱妨害+5"],
+    "materials": ["メイルブレイカー×1","アセイミダガー×1","ブラスバー×4","シルバーバー×8","ミスリルバー×8"],
+    "obtain": ["ゴライエDOMDOO"]
+  },
+  {
+    "id": "dag031",
+    "name": "サーパンティーン",
+    "category": "短剣",
+    "R/N": "R",
+    "level": "46",
+    "attrs": {"dmg": "21", "dly": "37", "dd": "0.567"},
+    "price": {"sell": "6,330B"},
+    "affix": ["DEX+3","WIS+3","光攻+3"],
+    "obtain": ["宝箱(メノアム城 下層)"],
+    "processing": ["デュアルエッジ"]
+  },
+  {
+    "id": "dag032",
+    "name": "アレグレットナイフ",
+    "category": "短剣",
+    "R/N": "R/N",
+    "level": "46",
+    "attrs": {"dmg": "23", "dly": "37", "dd": "0.621"},
+    "price": {"sell": "4,771B"},
+    "affix": ["STR+3","AGI+3","詠唱妨害+3"],
+    "obtain": ["宝箱(ガルダル峡谷 P)"]
+  },
+  {
+    "id": "dag033",
+    "name": "ハイダガー",
+    "category": "短剣",
+    "R/N": "R",
+    "level": "46",
+    "attrs": {"dmg": "21", "dly": "37", "dd": "0.567"},
+    "price": {"sell": "B"},
+    "affix": ["DEX+4","攻+2","クリティカル+4%"],
+    "obtain": ["WADJET(イスコ礁湖)"]
+  },
+  {
+    "id": "dag034",
+    "name": "シャープフィンガー",
+    "category": "短剣",
+    "R/N": "R/N",
+    "level": "47",
+    "attrs": {"dmg": "23", "dly": "45", "dd": "0.511"},
+    "price": {"sell": "6,000B"},
+    "affix": ["STR+4","DEX+3","AGI+3"],
+    "obtain": ["戦功1,200pt"]
+  },
+  {
+    "id": "dag035",
+    "name": "デュアルエッジ",
+    "category": "短剣",
+    "R/N": "N",
+    "level": "48",
+    "attrs": {"dmg": "24", "dly": "40", "dd": "0.600"},
+    "price": {"sell": "6,170B"},
+    "affix": ["DEX+6","WIS+4","クリティカル+7%"],
+    "materials": ["アサシンナイフ×1","サーパンティーン×1","シルバーバー×10","モリオン×10","ゴーラ人の銅貨×40"],
+    "obtain": ["ゴライエDOMDOO"],
+    "processing": ["オリジンダガー"]
+  },
+  {
+    "id": "dag036",
+    "name": "骨喰の短剣",
+    "category": "短剣",
+    "R/N": "N",
+    "level": "50",
+    "attrs": {"dmg": "28", "dly": "40", "dd": "0.700"},
+    "price": {"sell": "B"},
+    "affix": ["クリティカル+9%","PROC:HP吸収"],
+    "materials": ["ブラッディナイフ×1","首狩の短剣×1","ズーズーの骨×1","ガルーダの頭×10","血染布×30","ダークエッセンス×40"],
+    "obtain": ["ゴライエDOMDOO"],
+    "processing": ["オリジンダガー"]
+  },
+  {
+    "id": "dag037",
+    "name": "レサルダガー",
+    "category": "短剣",
+    "R/N": "R",
+    "level": "50",
+    "attrs": {"dmg": "29", "dly": "37", "dd": "0.784"},
+    "price": {"sell": "B"},
+    "affix": ["AGI+5","PROC:水属性DMG"],
+    "obtain": ["FRAIS ASURA"]
+  },
+  {
+    "id": "dag038",
+    "name": "トワイライトダガー",
+    "category": "短剣",
+    "R/N": "N",
+    "level": "50~",
+    "attrs": {"dmg": "28", "dly": "37", "dd": "0.756"},
+    "price": {"sell": "2,000B"},
+    "affix": ["WIS+8","攻速+2"],
+    "obtain": ["ゴブリンメダル×99"]
+  },
+  {
+    "id": "dag039",
+    "name": "オルターナイフ",
+    "category": "短剣",
+    "R/N": "N",
+    "level": "50~",
+    "attrs": {"dmg": "27", "dly": "37", "dd": "0.729"},
+    "price": {"sell": "B"},
+    "affix": ["クリティカル+7%","攻撃速度+2"],
+    "obtain": ["CURSED MASK(アタッカー型)(エルト湿地)"]
+  },
+  {
+    "id": "dag040",
+    "name": "フォーマルハウト",
+    "category": "短剣",
+    "R/N": "R/N",
+    "level": "50",
+    "attrs": {"dmg": "28", "dly": "45", "dd": "0.622"},
+    "price": {"sell": "不可"},
+    "affix": ["DEX+10","AGI+10","詠唱妨害+8"],
+    "obtain": ["11神の証"]
+  },
+  {
+    "id": "dag041",
+    "name": "フォーマルハウトII",
+    "category": "短剣",
+    "R/N": "R/N",
+    "level": "50",
+    "attrs": {"dmg": "29", "dly": "45", "dd": "0.644"},
+    "price": {"sell": "不可"},
+    "affix": ["DEX+10","AGI+10","詠唱妨害+9"],
+    "obtain": ["11神の証(強化)"]
+  },
+  {
+    "id": "dag042",
+    "name": "フォーマルハウトIII",
+    "category": "短剣",
+    "R/N": "R/N",
+    "level": "50",
+    "attrs": {"dmg": "32", "dly": "45", "dd": "0.711"},
+    "price": {"sell": "不可"},
+    "affix": ["DEX+11","AGI+10","詠唱妨害+9"],
+    "obtain": ["11神の証(強化)"]
+  },
+  {
+    "id": "dag043",
+    "name": "フォーマルハウトIV",
+    "category": "短剣",
+    "R/N": "R/N",
+    "level": "50",
+    "attrs": {"dmg": "35", "dly": "43", "dd": "0.813"},
+    "price": {"sell": "不可"},
+    "affix": ["DEX+12","AGI+11","詠唱妨害+9"],
+    "obtain": ["11神の証(強化)"]
+  }
+]
+
+# Save file
+os.makedirs("/mnt/data/export", exist_ok=True)
+out_path = "/mnt/data/export/items_daggers.json"
+with open(out_path, "w", encoding="utf-8") as f:
+    json.dump(items, f, ensure_ascii=False, indent=2)
+
+# Also present as a DataFrame preview for quick inspection
+df = []
+for it in items:
+    df.append({
+        "id": it["id"],
+        "name": it["name"],
+        "R/N": it["R/N"],
+        "level": it.get("level",""),
+        "dmg": it.get("attrs",{}).get("dmg",""),
+        "dly": it.get("attrs",{}).get("dly",""),
+        "dd": it.get("attrs",{}).get("dd",""),
+        "category": it["category"]
+    })
+df = pd.DataFrame(df)
+display_dataframe_to_user("短剣（items_daggers.jsonプレビュー）", df)
+
+out_path
