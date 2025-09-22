@@ -1,129 +1,60 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>エターナルゾーンDB（Unofficial）</title>
-  <link rel="manifest" href="manifest.json">
-  <meta name="theme-color" content="#111111">
-  <link rel="apple-touch-icon" href="icons/icon-192.png">
-  <style>
-    body { font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,"Hiragino Sans","Noto Sans JP",sans-serif; margin:0; background:#0f1115; color:#f1f1f1; }
-    header { position:sticky; top:0; backdrop-filter:blur(8px); background:rgba(17,17,17,.85); padding:12px 16px; border-bottom:1px solid #222; }
-    h1 { font-size:16px; margin:0; }
-    main { padding:16px; }
-    .tabs { display:flex; gap:8px; margin:12px 0 16px; }
-    .tab { padding:8px 12px; border:1px solid #333; border-radius:8px; cursor:pointer; }
-    .tab.active { background:#1f2330; }
-    .search { width:100%; padding:10px 12px; border-radius:8px; border:1px solid #333; background:#0f131a; color:#eee; outline:none; }
-    ul { list-style:none; padding:0; margin:12px 0 80px; }
-    li { padding:10px 12px; border:1px solid #2a2a2a; border-radius:10px; margin-bottom:10px; background:#141822; }
-    .pill { font-size:12px; padding:2px 8px; border:1px solid #3a3a3a; border-radius:999px; margin-left:8px; }
-    footer { position:fixed; bottom:0; left:0; right:0; background:#0f1115; border-top:1px solid #222; padding:10px 14px; color:#aaa; font-size:12px;}
-    a { color:#87b3ff; }
-  </style>
+  <meta charset="UTF-8">
+  <title>エターナルゾーンDB</title>
+  <link rel="manifest" href="./manifest.json">
 </head>
 <body>
-  <header><h1>エターナルゾーンDB（Unofficial）</h1></header>
-  <main>
-    <div class="tabs">
-      <div class="tab active" id="tab-items">装備</div>
-      <div class="tab" id="tab-monsters">モンスター</div>
-    </div>
-    <input id="search" class="search" placeholder="名前で検索..." autocomplete="off" />
-    <ul id="list"></ul>
-  </main>
-  <footer>データや画像は非公式ファンメイド。権利は各権利者に帰属します。</footer>
+  <h1>エターナルゾーン 装備DB</h1>
+
+  <!-- カテゴリボタン -->
+  <div id="categories">
+    <button onclick="loadCategory('items_daggers.json')">短剣</button>
+    <!-- 後で長剣や防具も増やせる -->
+  </div>
+
+  <!-- 検索ボックス -->
+  <input type="text" id="search" placeholder="検索...">
+  <ul id="results"></ul>
 
   <script>
-    // ---- Service Worker 登録（後で sw.js を v4 にしておく） ----
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', function() {
-        navigator.serviceWorker.register('./sw.js');
+    let currentItems = [];
+
+    // カテゴリ読み込み
+    function loadCategory(file) {
+      fetch('./data/' + file)
+        .then(res => res.json())
+        .then(data => {
+          currentItems = data;
+          renderItems(currentItems);
+        });
+    }
+
+    // 検索イベント
+    document.getElementById('search').addEventListener('input', e => {
+      const q = e.target.value.toLowerCase();
+      const filtered = currentItems.filter(it => it.name.toLowerCase().includes(q));
+      renderItems(filtered);
+    });
+
+    // 表示
+    function renderItems(items) {
+      const ul = document.getElementById('results');
+      ul.innerHTML = '';
+      items.forEach(obj => {
+        const li = document.createElement('li');
+        li.innerHTML = `
+          <strong>${obj.name}</strong> 
+          [${obj.category}] 
+          <span class="pill">R/N: ${obj["R/N"]}</span>
+        `;
+        ul.appendChild(li);
       });
     }
 
-    // ---- refs / state ----
-    var $list = document.getElementById('list');
-    var $search = document.getElementById('search');
-    var $tabItems = document.getElementById('tab-items');
-    var $tabMonsters = document.getElementById('tab-monsters');
-
-    var state = { tab: 'items', items: [], monsters: [] };
-
-    function normalize(s) { return (s || '').toString().toLowerCase().normalize('NFKC'); }
-    function esc(s) { return String(s == null ? '' : s); }
-
-    function setTab(tab) {
-      state.tab = tab;
-      $tabItems.classList.toggle('active', tab === 'items');
-      $tabMonsters.classList.toggle('active', tab === 'monsters');
-      try { localStorage.setItem('tab', tab); } catch (e) {}
-      render();
-    }
-
-    async function loadData() {
-      try {
-        var itemsRes = await fetch('data/items.json');
-        var monstersRes = await fetch('data/monsters.json');
-        state.items = await itemsRes.json();
-        state.monsters = await monstersRes.json();
-        console.log('Items loaded:', state.items.length);
-        console.log('Monsters loaded:', state.monsters.length);
-        render();
-      } catch (e) {
-        console.error('Load error:', e);
-      }
-    }
-
-    function render() {
-      var q = normalize($search.value);
-      var data = (state.tab === 'items') ? state.items : state.monsters;
-      var filtered = q ? data.filter(function(o){ return normalize(o.name).includes(q); }) : data;
-
-      $list.innerHTML = '';
-      var max = Math.min(filtered.length, 500);
-      for (var i = 0; i < max; i++) {
-        var obj = filtered[i];
-        var li = document.createElement('li');
-
-        if (state.tab === 'items') {
-          var atk  = (obj.attrs && (obj.attrs.atk  != null ? obj.attrs.atk  : '-')) || '-';
-          var matk = (obj.attrs && (obj.attrs.matk != null ? obj.attrs.matk : '-')) || '-';
-          li.innerHTML =
-            '<div><strong>' + esc(obj.name) + '</strong>' +
-            '<span class="pill">種別:' + esc(obj.type) + '</span>' +
-            '<span class="pill">レア:' + esc(obj.rarity) + '</span>' +
-            '</div>' +
-            '<div style="margin-top:6px; font-size:13px; color:#bbb">ATK:' + esc(atk) + ' / MATK:' + esc(matk) + '</div>';
-        } else {
-          var drops = (obj.drops || []).map(function(d){
-            var nm = d.itemName || d.itemId || '?';
-            var rt = Math.round(((d.rate || 0) * 100));
-            return esc(nm) + '(' + rt + '%)';
-          }).join(' / ') || '-';
-          li.innerHTML =
-            '<div><strong>' + esc(obj.name) + '</strong>' +
-            '<span class="pill">エリア:' + esc(obj.area) + '</span>' +
-            '<span class="pill">Lv:' + esc(obj.level) + '</span>' +
-            '</div>' +
-            '<div style="margin-top:6px; font-size:13px; color:#bbb">ドロップ: ' + drops + '</div>';
-        }
-
-        $list.appendChild(li);
-      }
-    }
-
-    $tabItems.addEventListener('click', function(){ setTab('items'); });
-    $tabMonsters.addEventListener('click', function(){ setTab('monsters'); });
-    $search.addEventListener('input', render);
-
-    try {
-      var saved = localStorage.getItem('tab');
-      if (saved) setTab(saved); else setTab('items');
-    } catch (e) { setTab('items'); }
-
-    loadData();
+    // 初期ロード（短剣）
+    loadCategory('items_daggers.json');
   </script>
 </body>
 </html>
