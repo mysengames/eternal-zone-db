@@ -166,7 +166,7 @@
           const obtainRow = (Array.isArray(obj.obtain) && obj.obtain.length)
             ? `<div class="row"><span class="dim">入手:</span> ${chipJoin(obj.obtain)}</div>` : '';
 
-          li.innerHTML = header + attrsRow + priceRow + materialsRow + processingRow + affixRow + obtainRow;
+          li.innerHTML = header + attrsRow + materialsRow + processingRow + affixRow + obtainRow + priceRow;
         }
 
         $list.appendChild(li);
