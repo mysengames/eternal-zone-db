@@ -1,5 +1,5 @@
 self.addEventListener('install', function(e) {
-  e.waitUntil(caches.open('ezdb-v4').then(function(cache) {
+  e.waitUntil(caches.open('ezdb-v5').then(function(cache) {
     return cache.addAll([
       './',
       './index.html',
