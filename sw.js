@@ -1,5 +1,5 @@
 self.addEventListener('install', (e) => {
-  e.waitUntil(caches.open('ezdb-v1').then(cache => cache.addAll([
+  e.waitUntil(caches.open('ezdb-v2').then(cache => cache.addAll([
     './',
     './index.html',
     './manifest.json',
