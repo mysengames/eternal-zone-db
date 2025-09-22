@@ -485,27 +485,3 @@
     "obtain": ["11神の証(強化)"]
   }
 ]
-
-# Save file
-os.makedirs("/mnt/data/export", exist_ok=True)
-out_path = "/mnt/data/export/items_daggers.json"
-with open(out_path, "w", encoding="utf-8") as f:
-    json.dump(items, f, ensure_ascii=False, indent=2)
-
-# Also present as a DataFrame preview for quick inspection
-df = []
-for it in items:
-    df.append({
-        "id": it["id"],
-        "name": it["name"],
-        "R/N": it["R/N"],
-        "level": it.get("level",""),
-        "dmg": it.get("attrs",{}).get("dmg",""),
-        "dly": it.get("attrs",{}).get("dly",""),
-        "dd": it.get("attrs",{}).get("dd",""),
-        "category": it["category"]
-    })
-df = pd.DataFrame(df)
-display_dataframe_to_user("短剣（items_daggers.jsonプレビュー）", df)
-
-out_path
