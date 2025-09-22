@@ -1,5 +1,5 @@
 // ★キャッシュ名は必ず更新（差し替え時に変える）
-const CACHE_NAME = 'ezdb-v17';
+const CACHE_NAME = 'ezdb-v18';
 
 // プリキャッシュするファイル
 const PRECACHE = [
