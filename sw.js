@@ -1,5 +1,5 @@
 // ★キャッシュ名は必ず更新（差し替え時に変える）
-const CACHE_NAME = 'ezdb-v15';
+const CACHE_NAME = 'ezdb-v16';
 
 // プリキャッシュするファイル
 const PRECACHE = [
@@ -8,8 +8,9 @@ const PRECACHE = [
   './manifest.json',
   './icons/icon-192.png',
   './icons/icon-512.png',
-  // まずは短剣だけ
+  // 短剣＋長剣をプリキャッシュ
   './data/items_daggers.json',
+  './data/items_swords.json',
   // モンスターも使うなら
   './data/monsters.json'
 ];
