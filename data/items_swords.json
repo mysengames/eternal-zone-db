@@ -4,573 +4,4697 @@
     "name": "ブロンズソード",
     "category": "長剣",
     "R/N": "-",
-    "level": "1",
-    "attrs": {"DMG": "7", "DELAY": "60", "D/D": "0.117"},
-    "price": {"買値": "224B", "売値": "90B"},
+    "level": "1~",
+    "attrs": {
+      "DMG": "7",
+      "DELAY": "60",
+      "D/D": "0.117"
+    },
     "affix": [],
-    "obtain": ["ラウスの剣", "ホープルFAITH", "アック区ADOL"]
+    "obtain": [
+      "購入 バスカル アック区ADOL(224B)",
+      "購入 ホープル村FAITH(224B)"
+    ],
+    "price": {}
   },
   {
     "id": "swd002",
+    "name": "ブロンズブロード",
+    "category": "長剣",
+    "R/N": "-",
+    "level": "8~",
+    "attrs": {
+      "DMG": "11",
+      "DELAY": "64",
+      "D/D": "0.172"
+    },
+    "affix": [],
+    "obtain": [
+      "購入 バスカル アック区ADOL(621B)",
+      "購入 北フラップ草原UNG(621B)"
+    ],
+    "price": {}
+  },
+  {
+    "id": "swd003",
+    "name": "スキアヴォーナ",
+    "category": "長剣",
+    "R/N": "R/N",
+    "level": "10~",
+    "attrs": {
+      "DMG": "12",
+      "DELAY": "57",
+      "D/D": "0.211"
+    },
+    "affix": [
+      "STR+1",
+      "WIS-5"
+    ],
+    "obtain": [
+      "ドロップ DUSAN 北フラップ草原"
+    ],
+    "price": {}
+  },
+  {
+    "id": "swd004",
+    "name": "アイアンソード",
+    "category": "長剣",
+    "R/N": "-",
+    "level": "14~",
+    "attrs": {
+      "DMG": "13",
+      "DELAY": "60",
+      "D/D": "0.217"
+    },
+    "affix": [],
+    "obtain": [
+      "購入 ラプトKONDY(1857B)"
+    ],
+    "price": {}
+  },
+  {
+    "id": "swd005",
     "name": "ダスクブレイド",
     "category": "長剣",
     "R/N": "N",
     "level": "1→30",
-    "attrs": {"DMG": "6~22", "DELAY": "60", "D/D": "0.366"},
-    "price": {"売値": "2,000B"},
-    "affix": ["敵意+2", "VIT1~2"],
-    "obtain": ["ゴブリンメダル×10"]
+    "attrs": {
+      "DMG": "6~22",
+      "DELAY": "60",
+      "D/D": "0.100~0.367"
+    },
+    "affix": [
+      "敵意+2",
+      "VIT1~2"
+    ],
+    "obtain": [
+      "ゴブリンメダル×10"
+    ],
+    "price": {}
   },
   {
-    "id": "swd003",
-    "name": "自縛の長剣",
-    "category": "長剣",
-    "R/N": "N",
-    "level": "1→30",
-    "attrs": {},
-    "price": {},
-    "affix": ["攻3～10", "WIS1～13"],
-    "obtain": ["AUXILIARIS LEMURES"]
-  },
-  {
-    "id": "swd004",
-    "name": "オリジンブレ－ド",
-    "category": "長剣",
-    "R/N": "N",
-    "level": "1→50",
-    "attrs": {"DMG": "6~48", "DELAY": "70", "D/D": "0.685"},
-    "price": {"craft_cost": "8,000B", "売値": "B"},
-    "affix": ["STR+3~7", "VIT+3~7", "HP+20"],
-    "materials": ["ソレイユソード×1", "タルワール×1", "ファイアストーン×20", "ギリメカラの牙×4", "コバルトバー×20", "オウラの巨塊×1"],
-    "obtain": ["ホープル村ORI"]
-  },
-  {
-    "id": "swd005",
+    "id": "swd006",
     "name": "イディオスパーダ",
     "category": "長剣",
     "R/N": "R",
     "level": "1→50",
-    "attrs": {"DMG": "4~47", "DELAY": "53", "D/D": "0.886"},
-    "price": {"売値": "B"},
-    "affix": ["STR1~10", "命中+5", "敵意-1", "PROC:毒"],
-    "obtain": ["FROID GOBLIN(ホープル村)"]
-  },
-  {
-    "id": "swd006",
-    "name": "ブロンズブロード",
-    "category": "長剣",
-    "R/N": "-",
-    "level": "8",
-    "attrs": {"DMG": "11", "DELAY": "64", "D/D": "0.172"},
-    "price": {"買値": "621B", "売値": "257B"},
-    "affix": [],
-    "obtain": ["アック区ADOL", "北フラップUNG"]
+    "attrs": {
+      "DMG": "4~47",
+      "DELAY": "53",
+      "D/D": "0.075~0.887"
+    },
+    "affix": [
+      "STR1~10",
+      "命中+5",
+      "敵意-1",
+      "PROC:毒"
+    ],
+    "obtain": [
+      "不明"
+    ],
+    "price": {}
   },
   {
     "id": "swd007",
-    "name": "スキアヴォーナ",
+    "name": "オリジンブレード",
     "category": "長剣",
-    "R/N": "R/N",
-    "level": "10",
-    "attrs": {"DMG": "12", "DELAY": "57", "D/D": "0.211"},
-    "price": {"売値": "298B"},
-    "affix": ["STR+1", "WIS-5"],
-    "obtain": ["DUSAN(北フラップ)"]
+    "R/N": "N",
+    "level": "1→50",
+    "attrs": {
+      "DMG": "6~48",
+      "DELAY": "70",
+      "D/D": "0.086~0.686"
+    },
+    "affix": [
+      "STR3~7",
+      "VIT3~7",
+      "HP+20"
+    ],
+    "materials": [
+      "ソレイユソード×1",
+      "タルワール×1",
+      "ギリメカラの牙×4",
+      "コバルトバー×20",
+      "ファイアストーン×20",
+      "オウラの巨塊×1"
+    ],
+    "obtain": [
+      "制作 ホープル(8,000B)"
+    ],
+    "price": {}
   },
   {
     "id": "swd008",
-    "name": "アイアンソード",
+    "name": "自縛の長剣",
     "category": "長剣",
-    "R/N": "-",
-    "level": "14",
-    "attrs": {"DMG": "13", "DELAY": "60", "D/D": "0.217"},
-    "price": {"買値": "1,857B", "売値": "964B"},
-    "affix": [],
-    "obtain": ["ラプトKONDY"]
+    "R/N": "N",
+    "level": "1→30",
+    "attrs": {
+      "DMG": "",
+      "DELAY": "",
+      "D/D": ""
+    },
+    "affix": [
+      "攻3～10",
+      "WIS1～13"
+    ],
+    "obtain": [
+      "不明"
+    ],
+    "price": {}
   },
   {
     "id": "swd009",
     "name": "アイアンブロード",
     "category": "長剣",
     "R/N": "-",
-    "level": "18",
-    "attrs": {"DMG": "17", "DELAY": "64", "D/D": "0.266"},
-    "price": {"買値": "3,623B", "売値": "1,731B"},
+    "level": "18~",
+    "attrs": {
+      "DMG": "17",
+      "DELAY": "64",
+      "D/D": "0.266"
+    },
     "affix": [],
-    "obtain": ["ラプトKONDY"]
+    "obtain": [
+      "購入 ラプトKONDY(3623B)"
+    ],
+    "price": {}
   },
   {
     "id": "swd010",
     "name": "パンツァステッチャー",
     "category": "長剣",
-    "R/N": "-N",
-    "level": "19",
-    "attrs": {"DMG": "14", "DELAY": "53", "D/D": "0.264"},
-    "price": {"買値": "3,824B", "売値": "1,917B"},
-    "affix": ["DEX+3"],
-    "obtain": ["ラプトKONDY"]
+    "R/N": "-",
+    "level": "19~",
+    "attrs": {
+      "DMG": "14",
+      "DELAY": "53",
+      "D/D": "0.264"
+    },
+    "affix": [
+      "DEX+3"
+    ],
+    "obtain": [
+      "購入 ラプトKONDY(3824B)"
+    ],
+    "price": {}
   },
   {
     "id": "swd011",
     "name": "グラディウス",
     "category": "長剣",
     "R/N": "R",
-    "level": "20",
-    "attrs": {"DMG": "17", "DELAY": "57", "D/D": "0.298"},
-    "price": {"売値": "2,054B"},
-    "affix": ["STR+2", "命中+1", "WIS-5"],
-    "obtain": ["DUSAN HAMAR(ザイン)"]
+    "level": "20~",
+    "attrs": {
+      "DMG": "17",
+      "DELAY": "57",
+      "D/D": "0.298"
+    },
+    "affix": [
+      "STR+2",
+      "命中+1",
+      "WIS-5"
+    ],
+    "obtain": [
+      "ドロップ DUSAN HAMAR ザイン"
+    ],
+    "price": {}
   },
   {
     "id": "swd012",
     "name": "スチールソード",
     "category": "長剣",
     "R/N": "-",
-    "level": "24",
-    "attrs": {"DMG": "20", "DELAY": "60", "D/D": "0.333"},
-    "price": {"買値": "9,216B", "売値": "2,454B"},
-    "affix": ["命中+2"],
-    "obtain": ["ラプトKONDY"]
+    "level": "24~",
+    "attrs": {
+      "DMG": "20",
+      "DELAY": "60",
+      "D/D": "0.333"
+    },
+    "affix": [
+      "命中+2"
+    ],
+    "obtain": [
+      "購入 ラプトKONDY(9216B)"
+    ],
+    "price": {}
   },
   {
     "id": "swd013",
     "name": "メタルスライサー",
     "category": "長剣",
     "R/N": "R/N",
-    "level": "25",
-    "attrs": {"DMG": "21", "DELAY": "64", "D/D": "0.328"},
-    "price": {"売値": "1,854B"},
-    "affix": ["STR+5", "攻+10"],
-    "obtain": ["SKELETON SWORDSMAN(プラッツ)", "CURSED BONES(プラッツ P)"]
+    "level": "25~",
+    "attrs": {
+      "DMG": "21",
+      "DELAY": "64",
+      "D/D": "0.328"
+    },
+    "affix": [
+      "STR+5",
+      "攻+10"
+    ],
+    "obtain": [
+      "ドロップ SKELETON SWORDSMAN @プラッツ"
+    ],
+    "price": {}
   },
   {
     "id": "swd014",
     "name": "ノッカー",
     "category": "長剣",
     "R/N": "-",
-    "level": "27",
-    "attrs": {"DMG": "18", "DELAY": "53", "D/D": "0.340"},
-    "price": {"買値": "10,041B", "売値": "2,510B"},
-    "affix": ["DEX+3"],
-    "obtain": ["スナンタウンXEON"]
+    "level": "27~",
+    "attrs": {
+      "DMG": "18",
+      "DELAY": "53",
+      "D/D": "0.340"
+    },
+    "affix": [
+      "DEX+3"
+    ],
+    "obtain": [
+      "購入 スナンXEON(10041B)"
+    ],
+    "price": {}
   },
   {
     "id": "swd015",
     "name": "ガードスパタ",
     "category": "長剣",
     "R/N": "R",
-    "level": "28",
-    "attrs": {"DMG": "20", "DELAY": "57", "D/D": "0.351"},
-    "price": {"売値": "2,812B"},
-    "affix": ["盾防御発生率UP"],
-    "obtain": ["宝箱(赤色の魔石)"]
+    "level": "28~",
+    "attrs": {
+      "DMG": "20",
+      "DELAY": "57",
+      "D/D": "0.351"
+    },
+    "affix": [
+      "盾防率UP"
+    ],
+    "obtain": [
+      "宝箱 赤色の魔石CHEST"
+    ],
+    "price": {}
   },
   {
     "id": "swd016",
     "name": "ロングソード",
     "category": "長剣",
     "R/N": "-",
-    "level": "29",
-    "attrs": {"DMG": "21", "DELAY": "60", "D/D": "0.350"},
-    "price": {"買値": "16,222B", "売値": "4,055B"},
+    "level": "29~",
+    "attrs": {
+      "DMG": "21",
+      "DELAY": "60",
+      "D/D": "0.350"
+    },
     "affix": [],
-    "obtain": ["スナンタウンXEON"]
+    "obtain": [
+      "購入 スナンXEON(16222B)"
+    ],
+    "price": {}
   },
   {
     "id": "swd017",
     "name": "メイジマッシャー",
     "category": "長剣",
     "R/N": "R/N",
-    "level": "30",
-    "attrs": {"DMG": "21", "DELAY": "57", "D/D": "0.368"},
-    "price": {"売値": "3,240B"},
-    "affix": ["魔抵+5", "詠唱妨害+10"],
-    "obtain": ["VAMPIRE SLUG(エルト)"]
+    "level": "30~",
+    "attrs": {
+      "DMG": "21",
+      "DELAY": "57",
+      "D/D": "0.368"
+    },
+    "affix": [
+      "魔抵+5",
+      "詠唱妨害+10"
+    ],
+    "obtain": [
+      "ドロップ VAMPIRE SLUG エルト湿地"
+    ],
+    "price": {}
   },
   {
     "id": "swd018",
     "name": "ソワールブレイド",
     "category": "長剣",
     "R/N": "N",
-    "level": "30~",
-    "attrs": {"DMG": "22~43", "DELAY": "67", "D/D": "0.641"},
-    "price": {"売値": "2,000B"},
-    "affix": ["命中+3", "VIT2~7"],
-    "obtain": ["ゴブリンメダル×20"]
+    "level": "30→50",
+    "attrs": {
+      "DMG": "22~43",
+      "DELAY": "67",
+      "D/D": "0.328~0.642"
+    },
+    "affix": [
+      "命中+3",
+      "VIT2~7"
+    ],
+    "obtain": [
+      "不明"
+    ],
+    "price": {}
   },
   {
     "id": "swd019",
     "name": "老練の長剣",
     "category": "長剣",
     "R/N": "N",
-    "level": "30~",
-    "attrs": {"DMG": "20~40", "DELAY": "50", "D/D": "0.800"},
-    "price": {"売値": "B"},
-    "affix": ["VIT3~8", "命中+4", "敵意+2"],
-    "obtain": ["ザインPZ(鍛れんされた鉱石75個)"]
+    "level": "30→50",
+    "attrs": {
+      "DMG": "20~40",
+      "DELAY": "50",
+      "D/D": "0.400~0.800"
+    },
+    "affix": [
+      "VIT3~8",
+      "命中+4",
+      "敵意+2"
+    ],
+    "obtain": [
+      "不明"
+    ],
+    "price": {}
   },
   {
     "id": "swd020",
-    "name": "アブソーバー",
+    "name": "業魔の長剣",
     "category": "長剣",
-    "R/N": "R/N",
-    "level": "33",
-    "attrs": {"DMG": "21", "DELAY": "57", "D/D": "0.368"},
-    "price": {"売値": "3,240B"},
-    "affix": ["PROC:HP吸収"],
-    "obtain": ["宝箱(赤竜洞　B2F)"]
+    "R/N": "N",
+    "level": "30→60",
+    "attrs": {
+      "DMG": "26~55",
+      "DELAY": "58",
+      "D/D": "0.448~0.948"
+    },
+    "affix": [
+      "攻10～18",
+      "WIS13～21",
+      "HP+40",
+      "SP+40"
+    ],
+    "obtain": [
+      "不明"
+    ],
+    "price": {}
   },
   {
     "id": "swd021",
-    "name": "ミスリルソード",
+    "name": "アブソーバー",
     "category": "長剣",
-    "R/N": "-",
-    "level": "34",
-    "attrs": {"DMG": "23", "DELAY": "60", "D/D": "0.383"},
-    "price": {"買値": "30,960B", "売値": "4,211B"},
-    "affix": ["詠唱妨害+5"],
-    "obtain": ["メノアム地区SABANA"]
+    "R/N": "R/N",
+    "level": "33~",
+    "attrs": {
+      "DMG": "21",
+      "DELAY": "57",
+      "D/D": "0.368"
+    },
+    "affix": [
+      "PROC:HP吸収"
+    ],
+    "obtain": [
+      "宝箱 赤竜洞B2 CHEST"
+    ],
+    "price": {}
   },
   {
     "id": "swd022",
-    "name": "ナイトソード",
+    "name": "ミスリルソード",
     "category": "長剣",
     "R/N": "-",
-    "level": "35",
-    "attrs": {"DMG": "24", "DELAY": "64", "D/D": "0.368"},
-    "price": {"買値": "37,800B", "売値": "4,241B"},
-    "affix": ["STR-2", "VIT+4", "DEX-2", "敵意+1"],
-    "obtain": ["メノアム地区SABANA"]
+    "level": "34~",
+    "attrs": {
+      "DMG": "23",
+      "DELAY": "60",
+      "D/D": "0.383"
+    },
+    "affix": [
+      "詠唱妨害+5"
+    ],
+    "obtain": [
+      "購入 メノアムSABANA(30960B)"
+    ],
+    "price": {}
   },
   {
     "id": "swd023",
-    "name": "セレモニアルソード",
+    "name": "ナイトソード",
     "category": "長剣",
     "R/N": "-",
-    "level": "37",
-    "attrs": {"DMG": "24", "DELAY": "57", "D/D": "0.421"},
-    "price": {"買値": "42,485B", "売値": "4,471B"},
-    "affix": ["魔命+2", "WIS+2"],
-    "obtain": ["アック区ROOTS"],
-    "processing": ["フレイムソード"]
+    "level": "35~",
+    "attrs": {
+      "DMG": "24",
+      "DELAY": "64",
+      "D/D": "0.375"
+    },
+    "affix": [
+      "STR-2",
+      "VIT+4",
+      "DEX-2",
+      "敵意+1"
+    ],
+    "obtain": [
+      "購入 メノアムSABANA(37800B)"
+    ],
+    "price": {}
   },
   {
     "id": "swd024",
-    "name": "フレイムソード",
+    "name": "セレモニアルソード",
     "category": "長剣",
-    "R/N": "N",
-    "level": "38",
-    "attrs": {"DMG": "25", "DELAY": "57", "D/D": "0.439"},
-    "price": {"craft_cost": "18,000B", "売値": "4,471B"},
-    "affix": ["WIS+2", "PROC:火属性DMG"],
-    "materials": ["セレモニアルソード×1", "発火剤×2", "ファイアエッセンス×2", "モリオン×1"],
-    "obtain": ["アック区TARON"],
-    "processing": ["ディノスソード", "ソレイユソード"]
+    "R/N": "-",
+    "level": "37~",
+    "attrs": {
+      "DMG": "24",
+      "DELAY": "57",
+      "D/D": "0.421"
+    },
+    "affix": [
+      "魔命+2",
+      "WIS+2"
+    ],
+    "obtain": [
+      "購入 アック区ROOTS(42485B)"
+    ],
+    "processing": [
+      "フレイムソード"
+    ],
+    "price": {}
   },
   {
     "id": "swd025",
-    "name": "サイフォス",
+    "name": "フレイムソード",
     "category": "長剣",
-    "R/N": "-",
-    "level": "39",
-    "attrs": {"DMG": "26", "DELAY": "60", "D/D": "0.433"},
-    "price": {"買値": "48,500B", "売値": "4,890B"},
-    "affix": ["命中+4", "攻+4"],
-    "obtain": ["メノアム地区SABANA", "VIMA ASURA(闘技場)"],
-    "processing": ["タルワール"]
+    "R/N": "N",
+    "level": "38~",
+    "attrs": {
+      "DMG": "25",
+      "DELAY": "57",
+      "D/D": "0.439"
+    },
+    "affix": [
+      "WIS+2",
+      "PROC:火属性DMG"
+    ],
+    "materials": [
+      "セレモニアルソード×1",
+      "発火剤×2",
+      "ファイアエッセンス×2",
+      "モリオン×1"
+    ],
+    "obtain": [
+      "製作 アック区TARON(18000B)"
+    ],
+    "processing": [
+      "ソレイユソード",
+      "ディノスソード"
+    ],
+    "price": {}
   },
   {
     "id": "swd026",
-    "name": "ハンガー",
+    "name": "サイフォス",
     "category": "長剣",
-    "R/N": "R",
-    "level": "40",
-    "attrs": {"DMG": "25", "DELAY": "57", "D/D": "0.439"},
-    "price": {"売値": "4,834B"},
-    "affix": ["DEX+3"],
-    "obtain": ["宝箱(黒色の魔石)", "VIMA ASURA(闘技場)"]
+    "R/N": "-",
+    "level": "39~",
+    "attrs": {
+      "DMG": "26",
+      "DELAY": "60",
+      "D/D": "0.433"
+    },
+    "affix": [
+      "命中+4",
+      "攻+4"
+    ],
+    "obtain": [
+      "購入 メノアムSABANA(48500B)"
+    ],
+    "processing": [
+      "タルワール"
+    ],
+    "price": {}
   },
   {
     "id": "swd027",
-    "name": "ケイオスブリンガー",
+    "name": "ハンガー",
     "category": "長剣",
-    "R/N": "R/N",
-    "level": "40",
-    "attrs": {"DMG": "28", "DELAY": "64", "D/D": "0.437"},
-    "price": {"売値": "4,729B"},
-    "affix": ["STR+5", "DEX+5", "闇攻+5"],
-    "obtain": ["MANAGARMR(バージル)", "HATI(バージル)"]
+    "R/N": "R",
+    "level": "40~",
+    "attrs": {
+      "DMG": "25",
+      "DELAY": "57",
+      "D/D": "0.439"
+    },
+    "affix": [
+      "DEX+3"
+    ],
+    "obtain": [
+      "宝箱 黒色の魔石 CHEST"
+    ],
+    "price": {}
   },
   {
     "id": "swd028",
-    "name": "パリィブレード",
+    "name": "ケイオスブリンガー",
     "category": "長剣",
     "R/N": "R/N",
-    "level": "42",
-    "attrs": {"DMG": "29", "DELAY": "60", "D/D": "0.483"},
-    "price": {"売値": "5,421B"},
-    "affix": ["VIT+5", "敵意+1"],
-    "obtain": ["GIRIMEKHALA(西キュキヌ)"]
+    "level": "40~",
+    "attrs": {
+      "DMG": "28",
+      "DELAY": "64",
+      "D/D": "0.438"
+    },
+    "affix": [
+      "STR+5",
+      "DEX+5",
+      "闇攻+5"
+    ],
+    "obtain": [
+      "ドロップ MANAGARMR HATI バージル原野"
+    ],
+    "price": {}
   },
   {
     "id": "swd029",
-    "name": "フランベルジェ",
-    "category": "長剣",
-    "R/N": "R/N",
-    "level": "43",
-    "attrs": {"DMG": "27", "DELAY": "60", "D/D": "0.450"},
-    "price": {"買値": "80,000B", "売値": "5,326B"},
-    "affix": ["STR+2", "DEX+4"],
-    "obtain": ["メノアム地区SABANA", "OGRE REGENT(メノアム牢)"]
-  },
-  {
-    "id": "swd030",
     "name": "グラファイトソード",
     "category": "長剣",
     "R/N": "-",
-    "level": "43",
-    "attrs": {"DMG": "27", "DELAY": "60", "D/D": "0.450"},
-    "price": {"買値": "71,980B", "売値": "B"},
-    "affix": ["DEX+2"],
-    "obtain": ["ゴライエDOMOO"]
+    "level": "43~",
+    "attrs": {
+      "DMG": "27",
+      "DELAY": "57",
+      "D/D": "0.474"
+    },
+    "affix": [
+      "DEX+2"
+    ],
+    "obtain": [
+      "購入 ゴライエDOMDOO(71980B)"
+    ],
+    "price": {}
   },
   {
-    "id": "swd031",
+    "id": "swd030",
     "name": "ファルクス",
     "category": "長剣",
     "R/N": "R",
-    "level": "44",
-    "attrs": {"DMG": "30", "DELAY": "64", "D/D": "0.469"},
-    "price": {"売値": "5,320B"},
-    "affix": ["STR+5", "PROC:防御DOWN"],
-    "obtain": ["ASTROS TIGER(グラダール)"],
-    "processing": ["タルワール"]
+    "level": "44~",
+    "attrs": {
+      "DMG": "30",
+      "DELAY": "64",
+      "D/D": "0.469"
+    },
+    "affix": [
+      "STR+5",
+      "PROC:防御力DOWN"
+    ],
+    "obtain": [
+      "不明"
+    ],
+    "processing": [
+      "タルワール"
+    ],
+    "price": {}
   },
   {
-    "id": "swd032",
-    "name": "グレートソード",
-    "category": "長剣",
-    "R/N": "R/N",
-    "level": "45",
-    "attrs": {"DMG": "30", "DELAY": "65", "D/D": "0.462"},
-    "price": {"買値": "100,000B", "売値": "6,138B"},
-    "affix": ["STR+7", "AGI-2", "攻+10"],
-    "obtain": ["メノアム地区SABANA"]
-  },
-  {
-    "id": "swd033",
+    "id": "swd031",
     "name": "ベーゼソード",
     "category": "長剣",
     "R/N": "R",
-    "level": "45",
-    "attrs": {"DMG": "32", "DELAY": "60", "D/D": "0.533"},
-    "price": {"売値": "5,520B"},
-    "affix": ["PROC:HP吸収"],
-    "obtain": ["NOIR(皇国軍軍医救出)"]
+    "level": "45~",
+    "attrs": {
+      "DMG": "32",
+      "DELAY": "60",
+      "D/D": "0.533"
+    },
+    "affix": [
+      "闇攻+5",
+      "PROC:HP吸収"
+    ],
+    "obtain": [
+      "不明"
+    ],
+    "price": {}
   },
   {
-    "id": "swd034",
+    "id": "swd032",
+    "name": "ワダツミの剣",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "45~",
+    "attrs": {
+      "DMG": "42",
+      "DELAY": "60",
+      "D/D": "0.700"
+    },
+    "affix": [
+      "STR+8",
+      "水攻+5",
+      "PROC:水属性DMG"
+    ],
+    "materials": [
+      "アグリオスの牙×8",
+      "エウリュトスの爪×6",
+      "エンケラドスの尻尾×6",
+      "ミマスの毛×8",
+      "ダークレプトイドの鱗×30",
+      "フリアエの翼×30"
+    ],
+    "obtain": [
+      "製作 メノアムMARUT(0B)"
+    ],
+    "price": {}
+  },
+  {
+    "id": "swd033",
     "name": "ディノスソード",
     "category": "長剣",
     "R/N": "N",
-    "level": "45",
-    "attrs": {"DMG": "35", "DELAY": "56", "D/D": "0.625"},
-    "price": {"craft_cost": "10,000B", "売値": "B"},
-    "affix": ["VIT+5", "DEX+5", "PROC:火属性DMG"],
-    "materials": ["フレイムソード×1", "ドラコレックスの爪×1", "ファイアストーン×5", "ファイアエッセンス×10", "ライトエッセンス×2"],
-    "obtain": ["チェスカフHENRY"]
+    "level": "45~",
+    "attrs": {
+      "DMG": "35",
+      "DELAY": "56",
+      "D/D": "0.625"
+    },
+    "affix": [
+      "VIT+5",
+      "DEX+5",
+      "PROC:火属性DMG"
+    ],
+    "materials": [
+      "フレイムソード×1",
+      "ドラコレックスの爪×1",
+      "ファイアストーン×5",
+      "ファイアエッセンス×10",
+      "ライトエッセンス×2"
+    ],
+    "obtain": [
+      "製作 チェスカフHENRY(10000B)"
+    ],
+    "price": {}
+  },
+  {
+    "id": "swd034",
+    "name": "マシェット",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "46~",
+    "attrs": {
+      "DMG": "32",
+      "DELAY": "60",
+      "D/D": "0.533"
+    },
+    "affix": [
+      "VIT+8",
+      "HP+20",
+      "敵意+1"
+    ],
+    "obtain": [
+      "不明"
+    ],
+    "price": {}
   },
   {
     "id": "swd035",
-    "name": "プルワー",
-    "category": "長剣",
-    "R/N": "R/N",
-    "level": "46",
-    "attrs": {"DMG": "32", "DELAY": "64", "D/D": "0.500"},
-    "price": {"売値": "5,820B"},
-    "affix": ["STR+7", "DEX+10"],
-    "obtain": ["VIMA ASURA(闘技場)"]
-  },
-  {
-    "id": "swd036",
-    "name": "マシェット",
-    "category": "長剣",
-    "R/N": "R/N",
-    "level": "46",
-    "attrs": {"DMG": "32", "DELAY": "60", "D/D": "0.533"},
-    "price": {"売値": "6,000B"},
-    "affix": ["VIT+8", "HP+20", "敵意+1"],
-    "obtain": ["戦功1,200pt"]
-  },
-  {
-    "id": "swd037",
-    "name": "クルセイダーソード",
-    "category": "長剣",
-    "R/N": "R",
-    "level": "47",
-    "attrs": {"DMG": "35", "DELAY": "64", "D/D": "0.564"},
-    "price": {"売値": "6,108B"},
-    "affix": ["攻+4", "DEX+4"],
-    "obtain": ["宝箱(メノアム城　下層)"]
-  },
-  {
-    "id": "swd038",
     "name": "シャーシカ",
     "category": "長剣",
     "R/N": "R",
-    "level": "47",
-    "attrs": {"DMG": "33", "DELAY": "53", "D/D": "0.622"},
-    "price": {"売値": "6,441B"},
-    "affix": ["WIS+5", "闇攻+3", "命中+2"],
-    "obtain": ["CONSULAR TAURUS(メノアム牢獄)"]
+    "level": "47~",
+    "attrs": {
+      "DMG": "33",
+      "DELAY": "53",
+      "D/D": "0.623"
+    },
+    "affix": [
+      "WIS+5",
+      "命中+2",
+      "闇攻+3"
+    ],
+    "obtain": [
+      "不明"
+    ],
+    "price": {}
+  },
+  {
+    "id": "swd036",
+    "name": "クルセイダーソード",
+    "category": "長剣",
+    "R/N": "R",
+    "level": "47~",
+    "attrs": {
+      "DMG": "35",
+      "DELAY": "64",
+      "D/D": "0.547"
+    },
+    "affix": [
+      "攻+4",
+      "DEX+4"
+    ],
+    "obtain": [
+      "宝箱 メノアム城下層 CONTAINER&CHEST"
+    ],
+    "price": {}
+  },
+  {
+    "id": "swd037",
+    "name": "アクティブレイド",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "47~",
+    "attrs": {
+      "DMG": "35",
+      "DELAY": "60",
+      "D/D": "0.583"
+    },
+    "affix": [
+      "STR+5",
+      "水攻+5"
+    ],
+    "obtain": [
+      "不明"
+    ],
+    "price": {}
+  },
+  {
+    "id": "swd038",
+    "name": "ソレイユソード",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "48~",
+    "attrs": {
+      "DMG": "37",
+      "DELAY": "60",
+      "D/D": "0.617"
+    },
+    "affix": [
+      "WIS+7",
+      "PROC:火属性DMG"
+    ],
+    "materials": [
+      "フレイムソード×1",
+      "リサイトロッド×1",
+      "ファイアエッセンス×3",
+      "ファイアストーン×3",
+      "赤の実×3",
+      "石盤のかけら×15"
+    ],
+    "obtain": [
+      "製作 チェスカフCHELLE(45000B)"
+    ],
+    "processing": [
+      "オリジンブレード"
+    ],
+    "price": {}
   },
   {
     "id": "swd039",
-    "name": "アクティオブレイド",
-    "category": "長剣",
-    "R/N": "",
-    "level": "47",
-    "attrs": {"DMG": "35", "DELAY": "60", "D/D": "0.583"},
-    "price": {"craft_cost": "-","売値": "B"},
-    "affix": ["STR+5", "水攻+5"],
-    "materials": ["大きな貝x10", "黒貝x10", "白貝x10", "不思議な貝x1"],
-    "obtain": ["SAL(イスコ礁湖)"]
-  },
-  {
-    "id": "swd040",
-    "name": "ソレイユソード",
-    "category": "長剣",
-    "R/N": "R/N",
-    "level": "48",
-    "attrs": {"DMG": "38", "DELAY": "60", "D/D": "0.633"},
-    "price": {"craft_cost": "45,000B", "売値": "6,300B"},
-    "affix": ["WIS+7", "PROC:火属性DMG"],
-    "materials": ["フレイムソード×1", "リサイトロッド×1", "ファイアエッセンス×3", "ファイアストーン×3", "赤の実×3", "石盤のかけら×15"],
-    "obtain": ["チェスカフCHELLE"]
-  },
-  {
-    "id": "swd041",
     "name": "タルワール",
     "category": "長剣",
     "R/N": "N",
-    "level": "48",
-    "attrs": {"DMG": "37", "DELAY": "57", "D/D": "0.649"},
-    "price": {"craft_cost": "130,000B", "売値": "B"},
-    "affix": ["STR+9", "攻+9", "PROC:防御DOWN"],
-    "materials": ["サイフォス×1", "ファルクス×1", "ウォーターストーン×12", "サソリの眼晶×12", "石盤のかけら×18"],
-    "obtain": ["チェスカフCHELLE"]
+    "level": "48~",
+    "attrs": {
+      "DMG": "37",
+      "DELAY": "57",
+      "D/D": "0.649"
+    },
+    "affix": [
+      "STR+9",
+      "攻+9",
+      "PROC:防御力DOWN"
+    ],
+    "materials": [
+      "ファルクス×1",
+      "サイフォス×1",
+      "ウォーターストーン×12",
+      "サソリの眼晶×12",
+      "石盤のかけら×18"
+    ],
+    "obtain": [
+      "製作 チェスカフCHELLE(130000B)"
+    ],
+    "processing": [
+      "オリジンブレード"
+    ],
+    "price": {}
   },
   {
-    "id": "swd042",
+    "id": "swd040",
+    "name": "ヴェローチェスパーダ",
+    "category": "長剣",
+    "R/N": "R/N",
+    "level": "48~",
+    "attrs": {
+      "DMG": "37",
+      "DELAY": "51",
+      "D/D": "0.725"
+    },
+    "affix": [
+      "STR+10",
+      "AGI+13",
+      "攻撃速度+5"
+    ],
+    "obtain": [
+      "不明"
+    ],
+    "price": {}
+  },
+  {
+    "id": "swd041",
     "name": "ハイプルワー",
     "category": "長剣",
     "R/N": "R/N",
-    "level": "49",
-    "attrs": {"DMG": "45", "DELAY": "64", "D/D": "0.703"},
-    "price": {"売値": "7,820B"},
-    "affix": ["STR+10", "DEX+11", "攻+15"],
-    "obtain": ["VIMA ASURA(闘技場第二)"]
+    "level": "49~",
+    "attrs": {
+      "DMG": "45",
+      "DELAY": "64",
+      "D/D": "0.703"
+    },
+    "affix": [
+      "STR+10",
+      "DEX+11",
+      "攻+15"
+    ],
+    "obtain": [
+      "不明"
+    ],
+    "price": {}
+  },
+  {
+    "id": "swd042",
+    "name": "フランベルジェ",
+    "category": "長剣",
+    "R/N": "-",
+    "level": "43~",
+    "attrs": {
+      "DMG": "27",
+      "DELAY": "60",
+      "D/D": "0.450"
+    },
+    "affix": [
+      "STR+2",
+      "DEX+4"
+    ],
+    "obtain": [
+      "購入 メノアムSABANA(80000B)"
+    ],
+    "price": {}
   },
   {
     "id": "swd043",
+    "name": "グレートソード",
+    "category": "長剣",
+    "R/N": "-",
+    "level": "45~",
+    "attrs": {
+      "DMG": "30",
+      "DELAY": "65",
+      "D/D": "0.462"
+    },
+    "affix": [
+      "STR+7",
+      "攻+10",
+      "AGI-2"
+    ],
+    "obtain": [
+      "購入 メノアムSABANA(100000B)"
+    ],
+    "price": {}
+  },
+  {
+    "id": "swd044",
+    "name": "パリィブレード",
+    "category": "長剣",
+    "R/N": "R/N",
+    "level": "42~",
+    "attrs": {
+      "DMG": "29",
+      "DELAY": "60",
+      "D/D": "0.483"
+    },
+    "affix": [
+      "VIT+5",
+      "敵意+1"
+    ],
+    "obtain": [
+      "不明"
+    ],
+    "price": {}
+  },
+  {
+    "id": "swd045",
+    "name": "プルワー",
+    "category": "長剣",
+    "R/N": "R/N",
+    "level": "46~",
+    "attrs": {
+      "DMG": "32",
+      "DELAY": "64",
+      "D/D": "0.500"
+    },
+    "affix": [
+      "STR+7",
+      "DEX+10"
+    ],
+    "obtain": [
+      "不明"
+    ],
+    "price": {}
+  },
+  {
+    "id": "swd046",
     "name": "トワイライトブレイド",
     "category": "長剣",
     "R/N": "N",
     "level": "50~",
-    "attrs": {"DMG": "45", "DELAY": "67", "D/D": "0.671"},
-    "price": {"売値": "2,000B"},
-    "affix": ["VIT+10", "PROC:HP吸収"],
-    "obtain": ["ゴブリンメダル×99"]
-  },
-  {
-    "id": "swd044",
-    "name": "シュトルーフェ",
-    "category": "長剣",
-    "R/N": "N",
-    "level": "50",
-    "attrs": {"DMG": "40", "DELAY": "60", "D/D": "0.666"},
-    "price": {"売値": "不可"},
-    "affix": ["VIT+10", "DEX+10", "PROC:HP吸収"],
-    "obtain": ["11神の証"]
-  },
-  {
-    "id": "swd045",
-    "name": "シュトルーフェII",
-    "category": "長剣",
-    "R/N": "N",
-    "level": "50",
-    "attrs": {"DMG": "42", "DELAY": "60", "D/D": "0.700"},
-    "price": {"売値": "不可"},
-    "affix": ["VIT+10", "DEX+10", "PROC:HP吸収"],
-    "obtain": ["11神の証(強化)"]
-  },
-  {
-    "id": "swd046",
-    "name": "シュトルーフェIII",
-    "category": "長剣",
-    "R/N": "N",
-    "level": "50",
-    "attrs": {"DMG": "43", "DELAY": "60", "D/D": "0.7166"},
-    "price": {"売値": "不可"},
-    "affix": ["VIT+11", "DEX+10", "PROC:HP吸収"],
-    "obtain": ["11神の証(強化)"]
+    "attrs": {
+      "DMG": "45",
+      "DELAY": "67",
+      "D/D": "0.672"
+    },
+    "affix": [
+      "VIT+10",
+      "PROC:HP吸収"
+    ],
+    "obtain": [
+      "不明"
+    ],
+    "price": {}
   },
   {
     "id": "swd047",
-    "name": "シュトルーフェIV",
+    "name": "古の長剣",
     "category": "長剣",
     "R/N": "N",
-    "level": "50",
-    "attrs": {"DMG": "46", "DELAY": "58", "D/D": "0.793"},
-    "price": {"売値": "不可"},
-    "affix": ["VIT+12", "DEX+11", "PROC:HP吸収"],
-    "obtain": ["11神の証(強化)"]
+    "level": "",
+    "attrs": {
+      "DMG": "",
+      "DELAY": "",
+      "D/D": ""
+    },
+    "affix": [],
+    "obtain": [
+      "宝箱 ジュラ魔窟深層 CHEST ギルド闘技場報酬"
+    ],
+    "price": {}
   },
   {
     "id": "swd048",
-    "name": "サモタミエーチ",
+    "name": "超越した長剣",
     "category": "長剣",
     "R/N": "N",
-    "level": "51",
-    "attrs": {"DMG": "45", "DELAY": "65", "D/D": "0.692"},
-    "price": {"売値": "B"},
-    "affix": ["STR+12", "攻+15", "詠唱妨害+8"],
-    "obtain": ["CAMOTA BELIAL(イスコ島嶼)"]
+    "level": "1~",
+    "attrs": {
+      "DMG": "40",
+      "DELAY": "64",
+      "D/D": "0.625"
+    },
+    "affix": [
+      "STR+7",
+      "WIS+7",
+      "風攻+5"
+    ],
+    "obtain": [
+      "不明"
+    ],
+    "price": {}
   },
   {
     "id": "swd049",
-    "name": "血に染まった長剣",
+    "name": "超越した長剣+1",
     "category": "長剣",
-    "R/N": "-",
-    "level": "55",
-    "attrs": {},
-    "price": {"売値": "B"},
-    "affix": ["STR-10", "VIT-10"],
-    "obtain": ["DER RAECHER(バージル原野)"],
-    "processing": ["聖獣の長剣", "加護の長剣"]
+    "R/N": "N",
+    "level": "1~",
+    "attrs": {
+      "DMG": "42",
+      "DELAY": "64",
+      "D/D": "0.656"
+    },
+    "affix": [
+      "STR+10",
+      "WIS+9",
+      "風攻+7",
+      "PROC:風属性DMG"
+    ],
+    "obtain": [
+      "不明"
+    ],
+    "price": {}
   },
   {
     "id": "swd050",
-    "name": "聖獣の長剣",
+    "name": "超越した長剣+2",
     "category": "長剣",
-    "R/N": "",
-    "level": "55",
-    "attrs": {"DMG": "50", "DELAY": "60", "D/D": "0.833"},
-    "price": {"craft_cost": "", "売値": "B"},
-    "affix": ["STR+10", "VIT+15", "詠唱妨害+10", "敵意+2"],
-    "materials": ["炎珠×10", "氷晶×5", "鏡石×10", "海雫×5", "血に染まった長剣×1", "血染布×3"],
-    "obtain": ["メノアム城下層TAKEC"]
+    "R/N": "N",
+    "level": "1~",
+    "attrs": {
+      "DMG": "45",
+      "DELAY": "60",
+      "D/D": "0.750"
+    },
+    "affix": [
+      "STR+13",
+      "WIS+11",
+      "風攻+8",
+      "PROC:風属性DMG"
+    ],
+    "obtain": [
+      "不明"
+    ],
+    "price": {}
   },
   {
     "id": "swd051",
+    "name": "超越した長剣+3",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "1~",
+    "attrs": {
+      "DMG": "47",
+      "DELAY": "60",
+      "D/D": "0.783"
+    },
+    "affix": [
+      "STR+16",
+      "WIS+13",
+      "風攻+9",
+      "PROC:風属性DMG"
+    ],
+    "obtain": [
+      "不明"
+    ],
+    "price": {}
+  },
+  {
+    "id": "swd057",
+    "name": "超越した長剣+4",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "55~",
+    "attrs": {
+      "DMG": "49",
+      "DELAY": "60",
+      "D/D": "0.817"
+    },
+    "affix": [
+      "STR+18",
+      "WIS+15",
+      "風攻+10",
+      "PROC:風属性DMG"
+    ],
+    "obtain": [
+      "不明"
+    ],
+    "price": {}
+  },
+    {
+    "id": "swd063",
+    "name": "超越した長剣+5",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "60~",
+    "attrs": {
+      "DMG": "55",
+      "DELAY": "57",
+      "D/D": "0.965"
+    },
+    "affix": [
+      "STR+29",
+      "WIS+24",
+      "風攻+15",
+      "PROC:風属性DMG"
+    ],
+    "obtain": [
+      "不明"
+    ],
+    "price": {}
+  },
+  {
+    "id": "swd064",
+    "name": "超越した長剣+6",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "70~",
+    "attrs": {
+      "DMG": "61",
+      "DELAY": "57",
+      "D/D": "1.070"
+    },
+    "affix": [
+      "STR+41",
+      "WIS+35",
+      "風攻+20",
+      "PROC:風属性DMG"
+    ],
+    "obtain": [
+      "不明"
+    ],
+    "price": {}
+  },
+  {
+    "id": "swd052",
+    "name": "サモタミェーチ",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "51~",
+    "attrs": {
+      "DMG": "45",
+      "DELAY": "65",
+      "D/D": "0.692"
+    },
+    "affix": [
+      "STR+12",
+      "攻+15",
+      "詠唱妨害+8"
+    ],
+    "obtain": [
+      "不明"
+    ],
+    "price": {}
+  },
+  {
+    "id": "swd053",
+    "name": "グリーフブロード",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "52~",
+    "attrs": {
+      "DMG": "44",
+      "DELAY": "60",
+      "D/D": "0.733"
+    },
+    "affix": [
+      "STR+8",
+      "魔攻+7",
+      "結界無効30%"
+    ],
+    "obtain": [
+      "不明"
+    ],
+    "price": {}
+  },
+  {
+    "id": "swd054",
+    "name": "コバルトブレイド",
+    "category": "長剣",
+    "R/N": "-",
+    "level": "51~",
+    "attrs": {
+      "DMG": "35",
+      "DELAY": "60",
+      "D/D": "0.583"
+    },
+    "affix": [
+      "VIT+5",
+      "盾防率UP"
+    ],
+    "obtain": [
+      "購入 ネポリオスBUDIK(152,930B)"
+    ],
+    "price": {}
+  },
+  {
+    "id": "swd055",
+    "name": "イミテートソード",
+    "category": "長剣",
+    "R/N": "R/N",
+    "level": "51~",
+    "attrs": {
+      "DMG": "65",
+      "DELAY": "75",
+      "D/D": "0.867"
+    },
+    "affix": [
+      "STR+10",
+      "攻+10",
+      "命中-10",
+      "攻撃速度-10"
+    ],
+    "obtain": [
+      "不明"
+    ],
+    "price": {}
+  },
+  {
+    "id": "swd056",
+    "name": "重戦士の長剣",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "53~",
+    "attrs": {
+      "DMG": "53",
+      "DELAY": "60",
+      "D/D": "0.883"
+    },
+    "affix": [
+      "STR+11",
+      "防+18",
+      "敵意+4"
+    ],
+    "obtain": [
+      "不明"
+    ],
+    "price": {}
+  },
+  {
+    "id": "swd058",
+    "name": "血に染まった長剣",
+    "category": "長剣",
+    "R/N": "-",
+    "level": "55~",
+    "attrs": {
+      "DMG": "",
+      "DELAY": "",
+      "D/D": ""
+    },
+    "affix": [
+      "STR-10",
+      "VIT-10"
+    ],
+    "obtain": [
+      "不明"
+    ],
+    "price": {}
+  },
+  {
+    "id": "swd059",
+    "name": "聖獣の長剣",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "55~",
+    "attrs": {
+      "DMG": "50",
+      "DELAY": "60",
+      "D/D": "0.833"
+    },
+    "affix": [
+      "STR+10",
+      "VIT+15",
+      "詠唱妨害+10",
+      "敵意+2"
+    ],
+    "obtain": [
+      "製作 メノアム下層TAKEC(0B)"
+    ],
+    "materials": [
+      "氷晶×5",
+      "鏡石×10",
+      "炎珠×10",
+      "海雫×5",
+      "血に染まった長剣×1",
+      "血染布×3"
+    ],
+    "price": {}
+  },
+  {
+    "id": "swd060",
     "name": "加護の長剣",
     "category": "長剣",
-    "R/N": "",
-    "level": "55",
-    "attrs": {"DMG": "50", "DELAY": "60", "D/D": "0.833"},
-    "price": {"craft_cost": "", "売値": "B"},
-    "affix": ["STR+15", "VIT+10", "攻+10", "PROC:水属性DMG"],
-    "materials": ["炎珠×5~氷晶×10", "鏡石×5", "海雫×10", "血に染まった長剣×1", "悪魔の角×3"],
-    "obtain": ["メノアム城下層TAKEC"]
+    "R/N": "N",
+    "level": "55~",
+    "attrs": {
+      "DMG": "50",
+      "DELAY": "60",
+      "D/D": "0.833"
+    },
+    "affix": [
+      "STR+15",
+      "VIT+10",
+      "攻+10",
+      "PROC:水属性DMG"
+    ],
+    "obtain": [
+      "製作 メノアム下層TAKEC(0B)"
+    ],
+    "materials": [
+      "氷晶×10",
+      "鏡石×5",
+      "炎珠×5",
+      "海雫×10",
+      "血に染まった長剣×1",
+      "悪魔の角×3"
+    ],
+    "price": {}
+  },
+  {
+    "id": "swd061",
+    "name": "ブラストソード",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "57~",
+    "attrs": {
+      "DMG": "55",
+      "DELAY": "64",
+      "D/D": "0.859"
+    },
+    "affix": [
+      "STR+15",
+      "WIL+9",
+      "闇攻+10",
+      "PROC:闇属性DMG"
+    ],
+    "obtain": [
+      "製作 ネポリオスSEIDEL(32,000B)"
+    ],
+    "materials": [
+      "断空刀×1",
+      "チタンバー×20",
+      "喚雷針×5",
+      "象牙×7",
+      "砥石×3"
+    ],
+    "price": {}
+  },
+  {
+    "id": "swd062",
+    "name": "秘塔の長剣",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "57~",
+    "attrs": {
+      "DMG": "52",
+      "DELAY": "57",
+      "D/D": "0.912"
+    },
+    "affix": [
+      "DEX+21",
+      "命中+18",
+      "魔命+18",
+      "暗躍+8",
+      "PROC:禁足"
+    ],
+    "obtain": [
+      "ピグラスの塔"
+    ],
+    "price": {}
+  },
+
+  {
+    "id": "swd065",
+    "name": "断空刀",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "",
+    "attrs": {
+      "DMG": "",
+      "DELAY": "",
+      "D/D": ""
+    },
+    "affix": [],
+    "obtain": [
+      "使用 ブラスト武器の製作素材"
+    ],
+    "processing": [
+      "ブラストエッジ",
+      "ブラストソード",
+      "ブラストロッド"
+    ],
+    "price": {}
+  },
+  {
+    "id": "swd080",
+    "name": "バトルフック",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "1→50",
+    "attrs": {
+      "DMG": "6～30",
+      "DELAY": "60",
+      "D/D": "0.100～0.500"
+    },
+    "affix": [
+      "AGI+1～2",
+      "DEX+1～2"
+    ],
+    "obtain": [
+      "イベント"
+    ],
+    "price": {}
+  },
+
+  {
+    "id": "swd115",
+    "name": "プリエソード",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "1→50",
+    "attrs": {
+      "DMG": "4～44",
+      "DELAY": "64",
+      "D/D": "0.063～0.688"
+    },
+    "affix": [
+      "WIS+1～8",
+      "PROC:水属性DMG"
+    ],
+    "obtain": [
+      "イベント"
+    ],
+    "price": {}
+  },
+
+  {
+    "id": "swd126",
+    "name": "ペネトレイトソードI",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "1→50",
+    "attrs": {
+      "DMG": "6~50",
+      "DELAY": "70",
+      "D/D": "0.086~0.714"
+    },
+    "affix": [
+      "STR2~8",
+      "PROC:防御力DOWN"
+    ],
+    "obtain": [
+      "不明"
+    ],
+    "price": {}
+  },
+  {
+    "id": "swd127",
+    "name": "ペネトレイトソードII",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "1→50",
+    "attrs": {
+      "DMG": "6~51",
+      "DELAY": "70",
+      "D/D": "0.086~0.729"
+    },
+    "affix": [
+      "STR2~9",
+      "PROC:防御力DOWN"
+    ],
+    "obtain": [
+      "不明"
+    ],
+    "price": {}
+  },
+
+  {
+    "id": "swd150",
+    "name": "リュミエールブレイド",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "1~60",
+    "attrs": {
+      "DMG": "57",
+      "DELAY": "63",
+      "D/D": "0.905"
+    },
+    "affix": [
+      "STR3～20",
+      "Cnt+8%",
+      "敵意+3"
+    ],
+    "obtain": [
+      "不明"
+    ],
+    "price": {}
+  },
+  {
+    "id": "swd151",
+    "name": "エターナルブレイド",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "1~70",
+    "attrs": {
+      "DMG": "63",
+      "DELAY": "58",
+      "D/D": "1.086"
+    },
+    "affix": [
+      "VIT7～32",
+      "Cnt+6%",
+      "ドロップ率UP"
+    ],
+    "obtain": [
+      "イベント"
+    ],
+    "price": {}
+  },
+  {
+    "id": "swd152",
+    "name": "ユミトブレイド",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "10~",
+    "attrs": {
+      "DMG": "13",
+      "DELAY": "65",
+      "D/D": "0.200"
+    },
+    "affix": [
+      "STR+5",
+      "攻+5",
+      "命中+2",
+      "P:麻痺"
+    ],
+    "obtain": [
+      "南フラップ草原 GOLD CHEST"
+    ],
+    "price": {}
+  },
+
+  {
+    "id": "swd167",
+    "name": "ディレクブレイド",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "51~",
+    "attrs": {
+      "DMG": "55",
+      "DELAY": "65",
+      "D/D": "0.846"
+    },
+    "affix": [
+      "STR+14",
+      "攻+14",
+      "命中+7",
+      "PROC:麻痺"
+    ],
+    "obtain": [
+      "南フラップ草原 GOLD CHEST"
+    ],
+    "price": {}
+  },
+
+  {
+    "id": "swd153",
+    "name": "バロウスライサー",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "15~60",
+    "attrs": {
+      "DMG": "47",
+      "DELAY": "57",
+      "D/D": "0.825"
+    },
+    "affix": [
+      "WIL3～11",
+      "光攻+11",
+      "P:光属性DMG"
+    ],
+    "obtain": [
+      "不明"
+    ],
+    "price": {}
+  },
+  {
+    "id": "swd154",
+    "name": "クラウンソード★3(2)",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "15~60",
+    "attrs": {
+      "DMG": "59",
+      "DELAY": "57",
+      "D/D": "1.035"
+    },
+    "affix": [
+      "*VIT5～19",
+      "*防+10",
+      "盾防率UP"
+    ],
+    "obtain": [
+      "不明"
+    ],
+    "price": {}
+  },
+  {
+    "id": "swd155",
+    "name": "神官の長剣",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "15~70",
+    "attrs": {
+      "DMG": "63",
+      "DELAY": "60",
+      "D/D": "1.050"
+    },
+    "affix": [
+      "AGI5～26",
+      "暗躍+20",
+      "攻撃速度+7"
+    ],
+    "obtain": [
+      "不明"
+    ],
+    "price": {}
+  },
+  {
+    "id": "swd156",
+    "name": "ハロウィンソード",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "30~65",
+    "attrs": {
+      "DMG": "61",
+      "DELAY": "61",
+      "D/D": "1.000"
+    },
+    "affix": [
+      "魔命14～32",
+      "攻詠速度+6",
+      "P:水属性DMG"
+    ],
+    "obtain": [
+      "白ぶどう亭HAL メノアム城 旧館"
+    ],
+    "price": {}
+  },
+  {
+    "id": "swd157",
+    "name": "レーツェルブロード",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "40~60",
+    "attrs": {
+      "DMG": "58",
+      "DELAY": "56",
+      "D/D": "1.036"
+    },
+    "affix": [
+      "VIT+21",
+      "Cnt+7%",
+      "反撃+7",
+      "敵意+4"
+    ],
+    "obtain": [
+      "南フラップ草原 GOLD CHEST"
+    ],
+    "price": {}
+  },
+  {
+    "id": "swd158",
+    "name": "アストラスサーベル",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "41~",
+    "attrs": {
+      "DMG": "29",
+      "DELAY": "64",
+      "D/D": "0.453"
+    },
+    "affix": [
+      "VIT+5",
+      "HP+10"
+    ],
+    "obtain": [
+      "不明"
+    ],
+    "price": {}
+  },
+  {
+    "id": "swd159",
+    "name": "シミター",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "5~",
+    "attrs": {
+      "DMG": "9",
+      "DELAY": "60",
+      "D/D": "0.150"
+    },
+    "affix": [],
+    "obtain": [
+      "モバゲー版エターナルゾーン"
+    ],
+    "price": {}
+  },
+  {
+    "id": "swd160",
+    "name": "バスターソード",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "15~",
+    "attrs": {
+      "DMG": "14",
+      "DELAY": "60",
+      "D/D": "0.233"
+    },
+    "affix": [],
+    "obtain": [
+      "モバゲー版エターナルゾーン"
+    ],
+    "price": {}
+  },
+  {
+    "id": "swd161",
+    "name": "バスターブレード",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "26~",
+    "attrs": {
+      "DMG": "21",
+      "DELAY": "60",
+      "D/D": "0.350"
+    },
+    "affix": [],
+    "obtain": [
+      "モバゲー版エターナルゾーン"
+    ],
+    "price": {}
+  },
+  {
+    "id": "swd162",
+    "name": "エスペランサー",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "40~",
+    "attrs": {
+      "DMG": "26",
+      "DELAY": "60",
+      "D/D": "0.433"
+    },
+    "affix": [
+      "DEX+3"
+    ],
+    "obtain": [
+      "モバゲー版エターナルゾーン"
+    ],
+    "price": {}
+  },
+  {
+    "id": "swd163",
+    "name": "シュトルーフェ",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "50~",
+    "attrs": {
+      "DMG": "40",
+      "DELAY": "60",
+      "D/D": "0.667"
+    },
+    "affix": [
+      "VIT+10",
+      "DEX+10",
+      "P:HP吸収"
+    ],
+    "obtain": [
+      "11神の証(強化)"
+    ],
+    "price": {}
+  },
+  {
+    "id": "swd164",
+    "name": "シュトルーフェII",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "50~",
+    "attrs": {
+      "DMG": "42",
+      "DELAY": "60",
+      "D/D": "0.700"
+    },
+    "affix": [
+      "VIT+10",
+      "DEX+10",
+      "P:HP吸収"
+    ],
+    "obtain": [
+      "11神の証(強化)"
+    ],
+    "price": {}
+  },
+  {
+    "id": "swd165",
+    "name": "シュトルーフェIII",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "50~",
+    "attrs": {
+      "DMG": "43",
+      "DELAY": "60",
+      "D/D": "0.717"
+    },
+    "affix": [
+      "VIT+11",
+      "DEX+10",
+      "P:HP吸収"
+    ],
+    "obtain": [
+      "11神の証(強化)"
+    ],
+    "price": {}
+  },
+  {
+    "id": "swd166",
+    "name": "シュトルーフェIV",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "50~",
+    "attrs": {
+      "DMG": "46",
+      "DELAY": "58",
+      "D/D": "0.793"
+    },
+    "affix": [
+      "VIT+12",
+      "DEX+11",
+      "P:HP吸収"
+    ],
+    "obtain": [
+      "11神の証(強化)"
+    ],
+    "price": {}
+  },
+
+  {
+    "id": "swd168",
+    "name": "シュトルーフェV",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "50~",
+    "attrs": {
+      "DMG": "52",
+      "DELAY": "58",
+      "D/D": "0.897"
+    },
+    "affix": [
+      "VIT+14",
+      "DEX+13",
+      "P:HP吸収"
+    ],
+    "obtain": [
+      "11神の証(強化)"
+    ],
+    "price": {}
+  },
+  {
+    "id": "swd169",
+    "name": "シュトルーフェVI",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "50~",
+    "attrs": {
+      "DMG": "54",
+      "DELAY": "56",
+      "D/D": "0.964"
+    },
+    "affix": [
+      "VIT+18",
+      "DEX+17",
+      "P:HP吸収"
+    ],
+    "obtain": [
+      "11神の証(強化)"
+    ],
+    "price": {}
+  },
+  {
+    "id": "swd170",
+    "name": "神格シュトルーフェ",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "50~",
+    "attrs": {
+      "DMG": "57",
+      "DELAY": "56",
+      "D/D": "1.018"
+    },
+    "affix": [
+      "VIT+22",
+      "DEX+21",
+      "P:HP吸収"
+    ],
+    "obtain": [
+      "11神の証(強化)"
+    ],
+    "price": {}
+  },
+
+
+
+  {
+    "id": "swd171",
+    "name": "バルバチャーク",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "51~70",
+    "attrs": {
+      "DMG": "44~60",
+      "DELAY": "58",
+      "D/D": "1.034"
+    },
+    "affix": [
+      "VIT15～45",
+      "DEX+28",
+      "盾防率UP",
+      "STR-30"
+    ],
+    "obtain": [
+      "不明"
+    ],
+    "price": {}
+  },
+
+  {
+    "id": "swd066",
+    "name": "ラピスブロード",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "1→30",
+    "attrs": {
+      "DMG": "6~35",
+      "DELAY": "60",
+      "D/D": "0.100~0.583"
+    },
+    "affix": [
+      "光攻+8",
+      "風攻+8"
+    ],
+    "obtain": [
+      "テルミラガチャ"
+    ],
+    "price": {}
+  },
+    {
+    "id": "swd087",
+    "name": "祝礼ラピスブロード",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "1→30",
+    "attrs": {
+      "DMG": "6~37",
+      "DELAY": "57",
+      "D/D": "0.105~0.649"
+    },
+    "affix": [
+      "光攻+10",
+      "風攻+10"
+    ],
+    "obtain": [
+      "テルミラガチャ"
+    ],
+    "price": {}
+  },
+  {
+    "id": "swd088",
+    "name": "契約ラピスブロード",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "1→30",
+    "attrs": {
+      "DMG": "6~39",
+      "DELAY": "57",
+      "D/D": "0.105~0.684"
+    },
+    "affix": [
+      "光攻+9",
+      "風攻+9",
+      "DEX-2"
+    ],
+    "obtain": [
+      "テルミラガチャ"
+    ],
+    "price": {}
+  },
+  {
+    "id": "swd089",
+    "name": "神威ラピスブロード",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "1→30",
+    "attrs": {
+      "DMG": "6~40",
+      "DELAY": "57",
+      "D/D": "0.105~0.702"
+    },
+    "affix": [
+      "光攻+10",
+      "風攻+10",
+      "WIS+3"
+    ],
+    "obtain": [
+      "テルミラガチャ"
+    ],
+    "price": {}
+  },
+  {
+    "id": "swd128",
+    "name": "堕神ラピスブロード",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "1~55",
+    "attrs": {
+      "DMG": "51",
+      "DELAY": "58",
+      "D/D": "0.879"
+    },
+    "affix": [
+      "光攻+12",
+      "風攻+12",
+      "防-11"
+    ],
+    "obtain": [
+      "テルミラガチャ"
+    ],
+    "price": {}
+  },
+  {
+    "id": "swd067",
+    "name": "アビスブロード",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "1→30",
+    "attrs": {
+      "DMG": "6~35",
+      "DELAY": "60",
+      "D/D": "0.100~0.583"
+    },
+    "affix": [
+      "闇攻+8",
+      "火攻+8"
+    ],
+    "obtain": [
+      "テルミラガチャ"
+    ],
+    "price": {}
+  },
+
+  {
+    "id": "swd090",
+    "name": "祝礼アビスブロード",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "1~55",
+    "attrs": {
+      "DMG": "53",
+      "DELAY": "58",
+      "D/D": "0.914"
+    },
+    "affix": [
+      "闇攻+9",
+      "水攻+9"
+    ],
+    "obtain": [
+      "テルミラガチャ"
+    ],
+    "price": {}
+  },
+  {
+    "id": "swd091",
+    "name": "契約アビスブロード",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "1~55",
+    "attrs": {
+      "DMG": "54",
+      "DELAY": "58",
+      "D/D": "0.931"
+    },
+    "affix": [
+      "闇攻+10",
+      "水攻+10",
+      "防-7"
+    ],
+    "obtain": [
+      "テルミラガチャ"
+    ],
+    "price": {}
+  },
+  {
+    "id": "swd092",
+    "name": "神威アビスブロード",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "1~55",
+    "attrs": {
+      "DMG": "55",
+      "DELAY": "58",
+      "D/D": "0.948"
+    },
+    "affix": [
+      "闇攻+11",
+      "水攻+11"
+    ],
+    "obtain": [
+      "テルミラガチャ"
+    ],
+    "price": {}
+  },
+
+  {
+    "id": "swd129",
+    "name": "堕神アビスブロード",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "1~55",
+    "attrs": {
+      "DMG": "56",
+      "DELAY": "58",
+      "D/D": "0.966"
+    },
+    "affix": [
+      "闇攻+12",
+      "水攻+12",
+      "防-11"
+    ],
+    "obtain": [
+      "テルミラガチャ"
+    ],
+    "price": {}
+  },
+
+  {
+    "id": "swd068",
+    "name": "クラジュブレイド",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "1→30",
+    "attrs": {
+      "DMG": "6~38",
+      "DELAY": "64",
+      "D/D": "0.094~0.594"
+    },
+    "affix": [
+      "PROC:光属性DMG"
+    ],
+    "obtain": [
+      "テルミラガチャ"
+    ],
+    "price": {}
+  },
+
+  {
+    "id": "swd093",
+    "name": "祝礼クラジュブレイド",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "1~55",
+    "attrs": {
+      "DMG": "51",
+      "DELAY": "58",
+      "D/D": "0.879"
+    },
+    "affix": [
+      "地攻+9",
+      "雷攻+9"
+    ],
+    "obtain": [
+      "テルミラガチャ"
+    ],
+    "price": {}
+  },
+  {
+    "id": "swd094",
+    "name": "契約クラジュブレイド",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "1~55",
+    "attrs": {
+      "DMG": "52",
+      "DELAY": "58",
+      "D/D": "0.897"
+    },
+    "affix": [
+      "地攻+10",
+      "雷攻+10",
+      "防-7"
+    ],
+    "obtain": [
+      "テルミラガチャ"
+    ],
+    "price": {}
+  },
+  {
+    "id": "swd095",
+    "name": "神威クラジュブレイド",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "1~55",
+    "attrs": {
+      "DMG": "53",
+      "DELAY": "58",
+      "D/D": "0.914"
+    },
+    "affix": [
+      "地攻+11",
+      "雷攻+11"
+    ],
+    "obtain": [
+      "テルミラガチャ"
+    ],
+    "price": {}
+  },
+
+  {
+    "id": "swd130",
+    "name": "堕神クラジュブレイド",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "1~55",
+    "attrs": {
+      "DMG": "54",
+      "DELAY": "58",
+      "D/D": "0.931"
+    },
+    "affix": [
+      "地攻+12",
+      "雷攻+12",
+      "防-11"
+    ],
+    "obtain": [
+      "テルミラガチャ"
+    ],
+    "price": {}
+  },
+
+  {
+    "id": "swd069",
+    "name": "イノサンブレイド",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "1→30",
+    "attrs": {
+      "DMG": "6~38",
+      "DELAY": "64",
+      "D/D": "0.094~0.594"
+    },
+    "affix": [
+      "PROC:HP吸収"
+    ],
+    "obtain": [
+      "テルミラガチャ"
+    ],
+    "price": {}
+  },
+
+  {
+    "id": "swd096",
+    "name": "祝礼イノサンブレイド",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "1~55",
+    "attrs": {
+      "DMG": "50",
+      "DELAY": "58",
+      "D/D": "0.862"
+    },
+    "affix": [
+      "火攻+9",
+      "氷攻+9"
+    ],
+    "obtain": [
+      "テルミラガチャ"
+    ],
+    "price": {}
+  },
+  {
+    "id": "swd097",
+    "name": "契約イノサンブレイド",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "1~55",
+    "attrs": {
+      "DMG": "51",
+      "DELAY": "58",
+      "D/D": "0.879"
+    },
+    "affix": [
+      "火攻+10",
+      "氷攻+10",
+      "防-7"
+    ],
+    "obtain": [
+      "テルミラガチャ"
+    ],
+    "price": {}
+  },
+  {
+    "id": "swd098",
+    "name": "神威イノサンブレイド",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "1~55",
+    "attrs": {
+      "DMG": "52",
+      "DELAY": "58",
+      "D/D": "0.897"
+    },
+    "affix": [
+      "火攻+11",
+      "氷攻+11"
+    ],
+    "obtain": [
+      "テルミラガチャ"
+    ],
+    "price": {}
+  },
+
+  {
+    "id": "swd131",
+    "name": "堕神イノサンブレイド",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "1~55",
+    "attrs": {
+      "DMG": "53",
+      "DELAY": "58",
+      "D/D": "0.914"
+    },
+    "affix": [
+      "火攻+12",
+      "氷攻+12",
+      "防-11"
+    ],
+    "obtain": [
+      "テルミラガチャ"
+    ],
+    "price": {}
+  },
+
+
+  {
+    "id": "swd070",
+    "name": "カロルソード",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "1→35",
+    "attrs": {
+      "DMG": "6~33",
+      "DELAY": "57",
+      "D/D": "0.105~0.579"
+    },
+    "affix": [
+      "PROC:火属性DMG"
+    ],
+    "obtain": [
+      "テルミラガチャ"
+    ],
+    "price": {}
+  },
+  {
+    "id": "swd072",
+    "name": "祝礼カロルソード",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "1~40",
+    "attrs": {
+      "DMG": "38",
+      "DELAY": "60",
+      "D/D": "0.633"
+    },
+    "affix": [
+      "DEX1～9",
+      "P:風属性DMG"
+    ],
+    "obtain": [
+      "テルミラガチャ"
+    ],
+    "price": {}
+  },
+
+  {
+    "id": "swd099",
+    "name": "契約カロルソード",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "1~40",
+    "attrs": {
+      "DMG": "38",
+      "DELAY": "60",
+      "D/D": "0.633"
+    },
+    "affix": [
+      "DEX1～10",
+      "P:風属性DMG",
+      "WIL-2"
+    ],
+    "obtain": [
+      "テルミラガチャ"
+    ],
+    "price": {}
+  },
+  {
+    "id": "swd100",
+    "name": "神威カロルソード",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "1~40",
+    "attrs": {
+      "DMG": "40",
+      "DELAY": "60",
+      "D/D": "0.667"
+    },
+    "affix": [
+      "DEX1～10",
+      "P:風属性DMG"
+    ],
+    "obtain": [
+      "テルミラガチャ"
+    ],
+    "price": {}
+  },
+
+  {
+    "id": "swd132",
+    "name": "堕神カロルソード",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "1~40",
+    "attrs": {
+      "DMG": "41",
+      "DELAY": "60",
+      "D/D": "0.683"
+    },
+    "affix": [
+      "DEX1～12",
+      "P:風属性DMG",
+      "WIL-5"
+    ],
+    "obtain": [
+      "テルミラガチャ"
+    ],
+    "price": {}
+  },
+
+  {
+    "id": "swd071",
+    "name": "ヘイルソード",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "1→35",
+    "attrs": {
+      "DMG": "6~32",
+      "DELAY": "64",
+      "D/D": "0.094~0.500"
+    },
+    "affix": [
+      "敵意+1",
+      "VIT1~10",
+      "HP+30"
+    ],
+    "obtain": [
+      "テルミラガチャ"
+    ],
+    "price": {}
+  },
+  {
+    "id": "swd073",
+    "name": "祝礼ヘイルソード",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "1~40",
+    "attrs": {
+      "DMG": "38",
+      "DELAY": "60",
+      "D/D": "0.633"
+    },
+    "affix": [
+      "STR1～9",
+      "P:雷属性DMG"
+    ],
+    "obtain": [
+      "テルミラガチャ"
+    ],
+    "price": {}
+  },
+
+  {
+    "id": "swd101",
+    "name": "契約ヘイルソード",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "1~40",
+    "attrs": {
+      "DMG": "38",
+      "DELAY": "60",
+      "D/D": "0.633"
+    },
+    "affix": [
+      "STR1～10",
+      "P:雷属性DMG",
+      "WIS-2"
+    ],
+    "obtain": [
+      "テルミラガチャ"
+    ],
+    "price": {}
+  },
+  {
+    "id": "swd102",
+    "name": "神威ヘイルソード",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "1~40",
+    "attrs": {
+      "DMG": "40",
+      "DELAY": "60",
+      "D/D": "0.667"
+    },
+    "affix": [
+      "STR1～10",
+      "P:雷属性DMG"
+    ],
+    "obtain": [
+      "テルミラガチャ"
+    ],
+    "price": {}
+  },
+  {
+    "id": "swd133",
+    "name": "堕神ヘイルソード",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "1~40",
+    "attrs": {
+      "DMG": "41",
+      "DELAY": "60",
+      "D/D": "0.683"
+    },
+    "affix": [
+      "STR1～12",
+      "P:雷属性DMG",
+      "WIS-5"
+    ],
+    "obtain": [
+      "テルミラガチャ"
+    ],
+    "price": {}
+  },
+
+  {
+    "id": "swd074",
+    "name": "ガダンブレイド",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "1~40",
+    "attrs": {
+      "DMG": "39",
+      "DELAY": "59",
+      "D/D": "0.661"
+    },
+    "affix": [
+      "DEX1～10",
+      "命中1～10"
+    ],
+    "obtain": [
+      "テルミラガチャ"
+    ],
+    "price": {}
+  },
+  {
+    "id": "swd076",
+    "name": "祝礼ガダンブレイド",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "1~40",
+    "attrs": {
+      "DMG": "39",
+      "DELAY": "59",
+      "D/D": "0.661"
+    },
+    "affix": [
+      "DEX1～11",
+      "命中1～11"
+    ],
+    "obtain": [
+      "テルミラガチャ"
+    ],
+    "price": {}
+  },
+
+  {
+    "id": "swd103",
+    "name": "契約ガダンブレイド",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "1~40",
+    "attrs": {
+      "DMG": "40",
+      "DELAY": "59",
+      "D/D": "0.678"
+    },
+    "affix": [
+      "DEX1～12",
+      "命中1～12",
+      "VIT-2"
+    ],
+    "obtain": [
+      "テルミラガチャ"
+    ],
+    "price": {}
+  },
+  {
+    "id": "swd104",
+    "name": "神威ガダンブレイド",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "1~40",
+    "attrs": {
+      "DMG": "41",
+      "DELAY": "59",
+      "D/D": "0.695"
+    },
+    "affix": [
+      "DEX1～12",
+      "命中1～12"
+    ],
+    "obtain": [
+      "テルミラガチャ"
+    ],
+    "price": {}
+  },
+  {
+    "id": "swd134",
+    "name": "堕神ガダンブレイド",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "1~40",
+    "attrs": {
+      "DMG": "42",
+      "DELAY": "59",
+      "D/D": "0.712"
+    },
+    "affix": [
+      "DEX1～14",
+      "命中1～14",
+      "VIT-5"
+    ],
+    "obtain": [
+      "テルミラガチャ"
+    ],
+    "price": {}
+  },
+  {
+    "id": "swd075",
+    "name": "アムスブレイド",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "1~40",
+    "attrs": {
+      "DMG": "40",
+      "DELAY": "58",
+      "D/D": "0.690"
+    },
+    "affix": [
+      "STR1～10",
+      "攻1～10"
+    ],
+    "obtain": [
+      "テルミラガチャ"
+    ],
+    "price": {}
+  },
+
+  {
+    "id": "swd077",
+    "name": "祝礼アムスブレイド",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "1~40",
+    "attrs": {
+      "DMG": "41",
+      "DELAY": "58",
+      "D/D": "0.707"
+    },
+    "affix": [
+      "STR1～11",
+      "攻1～11"
+    ],
+    "obtain": [
+      "テルミラガチャ"
+    ],
+    "price": {}
+  },
+  {
+    "id": "swd105",
+    "name": "契約アムスブレイド",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "1~40",
+    "attrs": {
+      "DMG": "42",
+      "DELAY": "58",
+      "D/D": "0.724"
+    },
+    "affix": [
+      "STR1～12",
+      "攻1～12",
+      "AGI-2"
+    ],
+    "obtain": [
+      "テルミラガチャ"
+    ],
+    "price": {}
+  },
+  {
+    "id": "swd106",
+    "name": "神威アムスブレイド",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "1~40",
+    "attrs": {
+      "DMG": "43",
+      "DELAY": "58",
+      "D/D": "0.741"
+    },
+    "affix": [
+      "STR1～12",
+      "攻1～12"
+    ],
+    "obtain": [
+      "テルミラガチャ"
+    ],
+    "price": {}
+  },
+
+  {
+    "id": "swd135",
+    "name": "堕神アムスブレイド",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "1~40",
+    "attrs": {
+      "DMG": "44",
+      "DELAY": "58",
+      "D/D": "0.759"
+    },
+    "affix": [
+      "STR1～14",
+      "攻1～14",
+      "AGI-5"
+    ],
+    "obtain": [
+      "テルミラガチャ"
+    ],
+    "price": {}
+  },
+
+  {
+    "id": "swd078",
+    "name": "リアンブレイド",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "1~40",
+    "attrs": {
+      "DMG": "37",
+      "DELAY": "57",
+      "D/D": "0.649"
+    },
+    "affix": [
+      "VIT1～10",
+      "HP+30",
+      "敵意+2"
+    ],
+    "obtain": [
+      "テルミラガチャ"
+    ],
+    "price": {}
+  },
+  {
+    "id": "swd081",
+    "name": "祝礼リアンブレイド",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "1~40",
+    "attrs": {
+      "DMG": "38",
+      "DELAY": "57",
+      "D/D": "0.667"
+    },
+    "affix": [
+      "VIT1～10",
+      "HP+40",
+      "敵意+2"
+    ],
+    "obtain": [
+      "テルミラガチャ"
+    ],
+    "price": {}
+  },
+  {
+    "id": "swd083",
+    "name": "契約リアンブレイド",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "1~40",
+    "attrs": {
+      "DMG": "40",
+      "DELAY": "57",
+      "D/D": "0.702"
+    },
+    "affix": [
+      "VIT1～10",
+      "HP+50",
+      "敵意+3",
+      "STR-2"
+    ],
+    "obtain": [
+      "テルミラガチャ"
+    ],
+    "price": {}
+  },
+  {
+    "id": "swd085",
+    "name": "神威リアンブレイド",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "1~40",
+    "attrs": {
+      "DMG": "40",
+      "DELAY": "57",
+      "D/D": "0.702"
+    },
+    "affix": [
+      "VIT1～10",
+      "HP+50",
+      "敵意+3"
+    ],
+    "obtain": [
+      "テルミラガチャ"
+    ],
+    "price": {}
+  },
+  {
+    "id": "swd136",
+    "name": "堕神リアンブレイド",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "1~40",
+    "attrs": {
+      "DMG": "41",
+      "DELAY": "60",
+      "D/D": "0.683"
+    },
+    "affix": [
+      "敵意+2",
+      "HP+60",
+      "盾防率UP",
+      "回避-9"
+    ],
+    "obtain": [
+      "テルミラガチャ"
+    ],
+    "price": {}
+  },
+
+  {
+    "id": "swd079",
+    "name": "ノブルソード",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "1~40",
+    "attrs": {
+      "DMG": "37",
+      "DELAY": "60",
+      "D/D": "0.617"
+    },
+    "affix": [
+      "WIS1～8",
+      "P:風属性DMG"
+    ],
+    "obtain": [
+      "テルミラガチャ"
+    ],
+    "price": {}
+  },
+  {
+    "id": "swd082",
+    "name": "祝礼ノブルソード",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "1~40",
+    "attrs": {
+      "DMG": "38",
+      "DELAY": "60",
+      "D/D": "0.633"
+    },
+    "affix": [
+      "WIS1～9",
+      "P:風属性DMG"
+    ],
+    "obtain": [
+      "テルミラガチャ"
+    ],
+    "price": {}
+  },
+  {
+    "id": "swd084",
+    "name": "契約ノブルソード",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "1~40",
+    "attrs": {
+      "DMG": "38",
+      "DELAY": "60",
+      "D/D": "0.633"
+    },
+    "affix": [
+      "WIS1～10",
+      "P:風属性DMG",
+      "WIL-2"
+    ],
+    "obtain": [
+      "テルミラガチャ"
+    ],
+    "price": {}
+  },
+
+  {
+    "id": "swd086",
+    "name": "神威ノブルソード",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "1~40",
+    "attrs": {
+      "DMG": "40",
+      "DELAY": "57",
+      "D/D": "0.702"
+    },
+    "affix": [
+      "WIS1～10",
+      "P:風属性DMG"
+    ],
+    "obtain": [
+      "テルミラガチャ"
+    ],
+    "price": {}
+  },
+  {
+    "id": "swd137",
+    "name": "堕神ノブルソード",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "1~40",
+    "attrs": {
+      "DMG": "41",
+      "DELAY": "57",
+      "D/D": "0.719"
+    },
+    "affix": [
+      "WIS1～12",
+      "P:風属性DMG",
+      "WIL-5"
+    ],
+    "obtain": [
+      "テルミラガチャ"
+    ],
+    "price": {}
+  },
+
+
+  {
+    "id": "swd107",
+    "name": "キリエブレイド",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "1~40",
+    "attrs": {
+      "DMG": "51",
+      "DELAY": "70",
+      "D/D": "0.729"
+    },
+    "affix": [
+      "STR1～11",
+      "P:光属性DMG"
+    ],
+    "obtain": [
+      "テルミラガチャ"
+    ],
+    "price": {}
+  },
+
+  {
+    "id": "swd109",
+    "name": "祝礼キリエブレイド",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "1~40",
+    "attrs": {
+      "DMG": "51",
+      "DELAY": "70",
+      "D/D": "0.729"
+    },
+    "affix": [
+      "STR1～12",
+      "P:光属性DMG"
+    ],
+    "obtain": [
+      "テルミラガチャ"
+    ],
+    "price": {}
+  },
+
+  {
+    "id": "swd111",
+    "name": "契約キリエブレイド",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "1~40",
+    "attrs": {
+      "DMG": "51",
+      "DELAY": "70",
+      "D/D": "0.729"
+    },
+    "affix": [
+      "STR1～13",
+      "P:光属性DMG",
+      "VIT-4"
+    ],
+    "obtain": [
+      "テルミラガチャ"
+    ],
+    "price": {}
+  },
+
+  {
+    "id": "swd113",
+    "name": "神威キリエブレイド",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "1~40",
+    "attrs": {
+      "DMG": "51",
+      "DELAY": "70",
+      "D/D": "0.729"
+    },
+    "affix": [
+      "STR1～13",
+      "P:光属性DMG"
+    ],
+    "obtain": [
+      "テルミラガチャ"
+    ],
+    "price": {}
+  },
+  {
+    "id": "swd138",
+    "name": "堕神キリエブレイド",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "1~40",
+    "attrs": {
+      "DMG": "52",
+      "DELAY": "70",
+      "D/D": "0.743"
+    },
+    "affix": [
+      "STR1～14",
+      "P:光属性DMG",
+      "VIT-7"
+    ],
+    "obtain": [
+      "テルミラガチャ"
+    ],
+    "price": {}
+  },
+
+  {
+    "id": "swd108",
+    "name": "クレドソード",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "1~40",
+    "attrs": {
+      "DMG": "51",
+      "DELAY": "70",
+      "D/D": "0.729"
+    },
+    "affix": [
+      "VIT1～8",
+      "DEX1～9"
+    ],
+    "obtain": [
+      "テルミラガチャ"
+    ],
+    "price": {}
+  },
+
+  {
+    "id": "swd110",
+    "name": "祝礼クレドソード",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "1~40",
+    "attrs": {
+      "DMG": "51",
+      "DELAY": "70",
+      "D/D": "0.729"
+    },
+    "affix": [
+      "VIT1～9",
+      "DEX1～10"
+    ],
+    "obtain": [
+      "テルミラガチャ"
+    ],
+    "price": {}
+  },
+
+  {
+    "id": "swd112",
+    "name": "契約クレドソード",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "1~40",
+    "attrs": {
+      "DMG": "52",
+      "DELAY": "70",
+      "D/D": "0.743"
+    },
+    "affix": [
+      "VIT1～10",
+      "DEX1～10",
+      "AGI-4"
+    ],
+    "obtain": [
+      "テルミラガチャ"
+    ],
+    "price": {}
+  },
+  {
+    "id": "swd114",
+    "name": "神威クレドソード",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "1~40",
+    "attrs": {
+      "DMG": "52",
+      "DELAY": "70",
+      "D/D": "0.743"
+    },
+    "affix": [
+      "VIT1～10",
+      "DEX1～10"
+    ],
+    "obtain": [
+      "テルミラガチャ"
+    ],
+    "price": {}
+  },
+  {
+    "id": "swd139",
+    "name": "堕神クレドソード",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "1~40",
+    "attrs": {
+      "DMG": "53",
+      "DELAY": "70",
+      "D/D": "0.757"
+    },
+    "affix": [
+      "VIT1～13",
+      "DEX1～10",
+      "AGI-7"
+    ],
+    "obtain": [
+      "テルミラガチャ"
+    ],
+    "price": {}
+  },
+
+
+  {
+    "id": "swd116",
+    "name": "リーヴブロード",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "1~50",
+    "attrs": {
+      "DMG": "44",
+      "DELAY": "64",
+      "D/D": "0.688"
+    },
+    "affix": [
+      "DEX1～11",
+      "水攻+9",
+      "P:毒",
+      "結界無効20%"
+    ],
+    "obtain": [
+      "テルミラガチャ"
+    ],
+    "price": {}
+  },
+  {
+    "id": "swd117",
+    "name": "祝礼リーヴブロード",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "1~50",
+    "attrs": {
+      "DMG": "45",
+      "DELAY": "64",
+      "D/D": "0.703"
+    },
+    "affix": [
+      "DEX1～12",
+      "水攻+10",
+      "P:毒",
+      "結界無効50%"
+    ],
+    "obtain": [
+      "テルミラガチャ"
+    ],
+    "price": {}
+  },
+  {
+    "id": "swd118",
+    "name": "契約リーヴブロード",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "1~50",
+    "attrs": {
+      "DMG": "45",
+      "DELAY": "64",
+      "D/D": "0.703"
+    },
+    "affix": [
+      "DEX1～13",
+      "水攻+10",
+      "P:毒",
+      "結界無効50%",
+      "VIT-3"
+    ],
+    "obtain": [
+      "テルミラガチャ"
+    ],
+    "price": {}
+  },
+  {
+    "id": "swd119",
+    "name": "神威リーヴブロード",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "1~50",
+    "attrs": {
+      "DMG": "46",
+      "DELAY": "64",
+      "D/D": "0.719"
+    },
+    "affix": [
+      "DEX1～14",
+      "水攻+12",
+      "P:毒",
+      "結界無効100%"
+    ],
+    "obtain": [
+      "テルミラガチャ"
+    ],
+    "price": {}
+  },
+  {
+    "id": "swd120",
+    "name": "堕神リーヴブロード",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "1~50",
+    "attrs": {
+      "DMG": "46",
+      "DELAY": "64",
+      "D/D": "0.719"
+    },
+    "affix": [
+      "DEX1～15",
+      "水攻+12",
+      "P:毒",
+      "結界無効100%",
+      "VIT-7"
+    ],
+    "obtain": [
+      "テルミラガチャ"
+    ],
+    "price": {}
+  },
+  {
+    "id": "swd121",
+    "name": "ラシルブロード",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "1~50",
+    "attrs": {
+      "DMG": "42",
+      "DELAY": "60",
+      "D/D": "0.700"
+    },
+    "affix": [
+      "VIT1～11",
+      "WIL1～9",
+      "詠唱妨害+5",
+      "ヘビ攻+2"
+    ],
+    "obtain": [
+      "テルミラガチャ"
+    ],
+    "price": {}
+  },
+  {
+    "id": "swd122",
+    "name": "祝礼ラシルブロード",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "1~50",
+    "attrs": {
+      "DMG": "43",
+      "DELAY": "60",
+      "D/D": "0.717"
+    },
+    "affix": [
+      "VIT1～12",
+      "WIL1～9",
+      "詠唱妨害+6",
+      "ヘビ攻+2"
+    ],
+    "obtain": [
+      "テルミラガチャ"
+    ],
+    "price": {}
+  },
+  {
+    "id": "swd123",
+    "name": "契約ラシルブロード",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "1~50",
+    "attrs": {
+      "DMG": "44",
+      "DELAY": "60",
+      "D/D": "0.733"
+    },
+    "affix": [
+      "VIT1～13",
+      "WIL1～10",
+      "詠唱妨害+6",
+      "ヘビ攻+2",
+      "AGI-3"
+    ],
+    "obtain": [
+      "テルミラガチャ"
+    ],
+    "price": {}
+  },
+  {
+    "id": "swd124",
+    "name": "神威ラシルブロード",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "1~50",
+    "attrs": {
+      "DMG": "45",
+      "DELAY": "60",
+      "D/D": "0.750"
+    },
+    "affix": [
+      "VIT1～14",
+      "WIL1～10",
+      "詠唱妨害+7",
+      "ヘビ攻+2"
+    ],
+    "obtain": [
+      "テルミラガチャ"
+    ],
+    "price": {}
+  },
+  {
+    "id": "swd125",
+    "name": "堕神ラシルブロード",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "1~50",
+    "attrs": {
+      "DMG": "46",
+      "DELAY": "60",
+      "D/D": "0.767"
+    },
+    "affix": [
+      "VIT1～15",
+      "WIL1～11",
+      "詠唱妨害+7",
+      "ヘビ攻+2",
+      "AGI-7"
+    ],
+    "obtain": [
+      "テルミラガチャ"
+    ],
+    "price": {}
+  },
+
+
+
+
+
+  {
+    "id": "swd140",
+    "name": "ワイズブロード",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "1~55",
+    "attrs": {
+      "DMG": "58",
+      "DELAY": "73",
+      "D/D": "0.795"
+    },
+    "affix": [
+      "VIT1～15",
+      "防1～15",
+      "HP+40"
+    ],
+    "obtain": [
+      "テルミラガチャ"
+    ],
+    "price": {}
+  },
+  {
+    "id": "swd141",
+    "name": "祝礼ワイズブロード",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "1~55",
+    "attrs": {
+      "DMG": "59",
+      "DELAY": "73",
+      "D/D": "0.808"
+    },
+    "affix": [
+      "VIT1～16",
+      "防1～16",
+      "HP+50"
+    ],
+    "obtain": [
+      "テルミラガチャ"
+    ],
+    "price": {}
+  },
+  {
+    "id": "swd142",
+    "name": "契約ワイズブロード",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "1~55",
+    "attrs": {
+      "DMG": "60",
+      "DELAY": "73",
+      "D/D": "0.822"
+    },
+    "affix": [
+      "VIT1～17",
+      "防1～17",
+      "HP+60",
+      "STR-7"
+    ],
+    "obtain": [
+      "テルミラガチャ"
+    ],
+    "price": {}
+  },
+  {
+    "id": "swd143",
+    "name": "神威ワイズブロード",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "1~55",
+    "attrs": {
+      "DMG": "61",
+      "DELAY": "73",
+      "D/D": "0.836"
+    },
+    "affix": [
+      "VIT2～18",
+      "防2～18",
+      "HP+60"
+    ],
+    "obtain": [
+      "テルミラガチャ"
+    ],
+    "price": {}
+  },
+  {
+    "id": "swd144",
+    "name": "堕神ワイズブロード",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "1~55",
+    "attrs": {
+      "DMG": "62",
+      "DELAY": "73",
+      "D/D": "0.849"
+    },
+    "affix": [
+      "VIT3～19",
+      "防3～19",
+      "HP+70",
+      "STR-11"
+    ],
+    "obtain": [
+      "テルミラガチャ"
+    ],
+    "price": {}
+  },
+  {
+    "id": "swd145",
+    "name": "グレスブロード",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "1~55",
+    "attrs": {
+      "DMG": "55",
+      "DELAY": "54",
+      "D/D": "1.019"
+    },
+    "affix": [
+      "STR2～12",
+      "DEX2～12",
+      "攻2～12"
+    ],
+    "obtain": [
+      "テルミラガチャ"
+    ],
+    "price": {}
+  },
+  {
+    "id": "swd146",
+    "name": "祝礼グレスブロード",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "1~55",
+    "attrs": {
+      "DMG": "56",
+      "DELAY": "54",
+      "D/D": "1.037"
+    },
+    "affix": [
+      "STR2～13",
+      "DEX2～13",
+      "攻2～13"
+    ],
+    "obtain": [
+      "テルミラガチャ"
+    ],
+    "price": {}
+  },
+  {
+    "id": "swd147",
+    "name": "契約グレスブロード",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "1~55",
+    "attrs": {
+      "DMG": "57",
+      "DELAY": "54",
+      "D/D": "1.056"
+    },
+    "affix": [
+      "STR2～14",
+      "DEX2～14",
+      "攻2～13",
+      "VIT-7"
+    ],
+    "obtain": [
+      "テルミラガチャ"
+    ],
+    "price": {}
+  },
+  {
+    "id": "swd148",
+    "name": "神威グレスブロード",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "1~55",
+    "attrs": {
+      "DMG": "58",
+      "DELAY": "54",
+      "D/D": "1.074"
+    },
+    "affix": [
+      "STR3～14",
+      "DEX3～14",
+      "攻3～14"
+    ],
+    "obtain": [
+      "テルミラガチャ"
+    ],
+    "price": {}
+  },
+  {
+    "id": "swd149",
+    "name": "堕神グレスブロード",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "1~55",
+    "attrs": {
+      "DMG": "59",
+      "DELAY": "54",
+      "D/D": "1.093"
+    },
+    "affix": [
+      "STR3～15",
+      "DEX3～15",
+      "攻3～15",
+      "VIT-11"
+    ],
+    "obtain": [
+      "テルミラガチャ"
+    ],
+    "price": {}
+  },
+
+  {
+    "id": "swd172",
+    "name": "アルセチャーク",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "1~60",
+    "attrs": {
+      "DMG": "60",
+      "DELAY": "70",
+      "D/D": "0.857"
+    },
+    "affix": [
+      "STR5～19",
+      "WIS5～19",
+      "攻詠速度+5"
+    ],
+    "obtain": [
+      "テルミラガチャ"
+    ],
+    "price": {}
+  },
+  {
+    "id": "swd173",
+    "name": "祝礼アルセチャーク",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "1~60",
+    "attrs": {
+      "DMG": "60",
+      "DELAY": "70",
+      "D/D": "0.857"
+    },
+    "affix": [
+      "STR5～20",
+      "WIS5～20",
+      "攻詠速度+5"
+    ],
+    "obtain": [
+      "テルミラガチャ"
+    ],
+    "price": {}
+  },
+  {
+    "id": "swd174",
+    "name": "契約アルセチャーク",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "1~60",
+    "attrs": {
+      "DMG": "61",
+      "DELAY": "70",
+      "D/D": "0.871"
+    },
+    "affix": [
+      "STR5～21",
+      "WIS5～21",
+      "攻詠速度+6",
+      "AGI-5"
+    ],
+    "obtain": [
+      "テルミラガチャ"
+    ],
+    "price": {}
+  },
+  {
+    "id": "swd175",
+    "name": "神威アルセチャーク",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "1~60",
+    "attrs": {
+      "DMG": "61",
+      "DELAY": "70",
+      "D/D": "0.871"
+    },
+    "affix": [
+      "STR5～22",
+      "WIS5～22",
+      "攻詠速度+6"
+    ],
+    "obtain": [
+      "テルミラガチャ"
+    ],
+    "price": {}
+  },
+  {
+    "id": "swd176",
+    "name": "堕神アルセチャーク",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "1~60",
+    "attrs": {
+      "DMG": "62",
+      "DELAY": "70",
+      "D/D": "0.886"
+    },
+    "affix": [
+      "STR5～23",
+      "WIS5～23",
+      "攻詠速度+7",
+      "AGI-12"
+    ],
+    "obtain": [
+      "テルミラガチャ"
+    ],
+    "price": {}
+  },
+  {
+    "id": "swd177",
+    "name": "テロスチャーク",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "1~60",
+    "attrs": {
+      "DMG": "55",
+      "DELAY": "53",
+      "D/D": "1.038"
+    },
+    "affix": [
+      "敵意+2",
+      "VIT4～20",
+      "盾防率UP",
+      "P:HP吸収"
+    ],
+    "obtain": [
+      "テルミラガチャ"
+    ],
+    "price": {}
+  },
+  {
+    "id": "swd178",
+    "name": "祝礼テロスチャーク",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "1~60",
+    "attrs": {
+      "DMG": "55",
+      "DELAY": "53",
+      "D/D": "1.038"
+    },
+    "affix": [
+      "敵意+2",
+      "VIT4～21",
+      "盾防率UP",
+      "P:HP吸収"
+    ],
+    "obtain": [
+      "テルミラガチャ"
+    ],
+    "price": {}
+  },
+  {
+    "id": "swd179",
+    "name": "契約テロスチャーク",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "1~60",
+    "attrs": {
+      "DMG": "56",
+      "DELAY": "53",
+      "D/D": "1.057"
+    },
+    "affix": [
+      "敵意+3",
+      "VIT4～22",
+      "盾防率UP",
+      "P:HP吸収",
+      "SP-20"
+    ],
+    "obtain": [
+      "テルミラガチャ"
+    ],
+    "price": {}
+  },
+  {
+    "id": "swd180",
+    "name": "神威テロスチャーク",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "1~60",
+    "attrs": {
+      "DMG": "58",
+      "DELAY": "53",
+      "D/D": "1.094"
+    },
+    "affix": [
+      "敵意+4",
+      "VIT4～23",
+      "盾防率UP",
+      "P:HP吸収"
+    ],
+    "obtain": [
+      "テルミラガチャ"
+    ],
+    "price": {}
+  },
+  {
+    "id": "swd181",
+    "name": "堕神テロスチャーク",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "1~60",
+    "attrs": {
+      "DMG": "58",
+      "DELAY": "53",
+      "D/D": "1.094"
+    },
+    "affix": [
+      "敵意+5",
+      "VIT4～24",
+      "盾防率UP",
+      "P:HP吸収",
+      "SP-50"
+    ],
+    "obtain": [
+      "テルミラガチャ"
+    ],
+    "price": {}
+  },
+  {
+    "id": "swd182",
+    "name": "レクスブレイド",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "1~60",
+    "attrs": {
+      "DMG": "54",
+      "DELAY": "57",
+      "D/D": "0.947"
+    },
+    "affix": [
+      "敵意+3",
+      "VIT5～23",
+      "HP+60"
+    ],
+    "obtain": [
+      "テルミラガチャ"
+    ],
+    "price": {}
+  },
+  {
+    "id": "swd183",
+    "name": "祝礼レクスブレイド",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "1~60",
+    "attrs": {
+      "DMG": "56",
+      "DELAY": "57",
+      "D/D": "0.982"
+    },
+    "affix": [
+      "敵意+3",
+      "VIT5～24",
+      "HP+70"
+    ],
+    "obtain": [
+      "テルミラガチャ"
+    ],
+    "price": {}
+  },
+  {
+    "id": "swd184",
+    "name": "契約レクスブレイド",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "1~60",
+    "attrs": {
+      "DMG": "57",
+      "DELAY": "57",
+      "D/D": "1.000"
+    },
+    "affix": [
+      "敵意+4",
+      "VIT5～24",
+      "HP+80",
+      "STR-5"
+    ],
+    "obtain": [
+      "テルミラガチャ"
+    ],
+    "price": {}
+  },
+  {
+    "id": "swd185",
+    "name": "神威レクスブレイド",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "1~60",
+    "attrs": {
+      "DMG": "60",
+      "DELAY": "57",
+      "D/D": "1.053"
+    },
+    "affix": [
+      "敵意+4",
+      "VIT5～25",
+      "HP+100",
+      "反撃の儀"
+    ],
+    "obtain": [
+      "テルミラガチャ"
+    ],
+    "price": {}
+  },
+  {
+    "id": "swd186",
+    "name": "堕神レクスブレイド",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "1~60",
+    "attrs": {
+      "DMG": "61",
+      "DELAY": "57",
+      "D/D": "1.070"
+    },
+    "affix": [
+      "敵意+5",
+      "VIT5～25",
+      "HP+110",
+      "STR-10",
+      "反撃の儀"
+    ],
+    "obtain": [
+      "テルミラガチャ"
+    ],
+    "price": {}
+  },
+  {
+    "id": "swd187",
+    "name": "メランブレイド",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "1~60",
+    "attrs": {
+      "DMG": "59",
+      "DELAY": "60",
+      "D/D": "0.983"
+    },
+    "affix": [
+      "STR5～20",
+      "VIT5～20",
+      "P:失神"
+    ],
+    "obtain": [
+      "テルミラガチャ"
+    ],
+    "price": {}
+  },
+  {
+    "id": "swd188",
+    "name": "祝礼メランブレイド",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "1~60",
+    "attrs": {
+      "DMG": "61",
+      "DELAY": "60",
+      "D/D": "1.017"
+    },
+    "affix": [
+      "STR5～21",
+      "VIT5～21",
+      "P:失神"
+    ],
+    "obtain": [
+      "テルミラガチャ"
+    ],
+    "price": {}
+  },
+  {
+    "id": "swd189",
+    "name": "契約メランブレイド",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "1~60",
+    "attrs": {
+      "DMG": "62",
+      "DELAY": "60",
+      "D/D": "1.033"
+    },
+    "affix": [
+      "STR5～22",
+      "VIT5～22",
+      "P:失神",
+      "AGI-7"
+    ],
+    "obtain": [
+      "テルミラガチャ"
+    ],
+    "price": {}
+  },
+  {
+    "id": "swd190",
+    "name": "神威メランブレイド",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "1~60",
+    "attrs": {
+      "DMG": "64",
+      "DELAY": "60",
+      "D/D": "1.067"
+    },
+    "affix": [
+      "STR5～23",
+      "VIT5～23",
+      "P:失神",
+      "貫通の襲"
+    ],
+    "obtain": [
+      "テルミラガチャ"
+    ],
+    "price": {}
+  },
+  {
+    "id": "swd191",
+    "name": "堕神メランブレイド",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "1~60",
+    "attrs": {
+      "DMG": "65",
+      "DELAY": "60",
+      "D/D": "1.083"
+    },
+    "affix": [
+      "STR5～24",
+      "VIT5～24",
+      "P:失神",
+      "貫通の襲",
+      "AGI-12"
+    ],
+    "obtain": [
+      "テルミラガチャ"
+    ],
+    "price": {}
+  },
+  {
+    "id": "swd192",
+    "name": "ディエチソード",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "1~70",
+    "attrs": {
+      "DMG": "64",
+      "DELAY": "52",
+      "D/D": "1.231"
+    },
+    "affix": [
+      "攻+20",
+      "STR8～29",
+      "命中+18"
+    ],
+    "obtain": [
+      "テルミラガチャ"
+    ],
+    "price": {}
+  },
+  {
+    "id": "swd193",
+    "name": "祝礼ディエチソード",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "1~70",
+    "attrs": {
+      "DMG": "64",
+      "DELAY": "52",
+      "D/D": "1.231"
+    },
+    "affix": [
+      "攻+20",
+      "STR8～31",
+      "命中+19"
+    ],
+    "obtain": [
+      "テルミラガチャ"
+    ],
+    "price": {}
+  },
+  {
+    "id": "swd194",
+    "name": "契約ディエチソード",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "1~70",
+    "attrs": {
+      "DMG": "65",
+      "DELAY": "52",
+      "D/D": "1.250"
+    },
+    "affix": [
+      "攻+22",
+      "STR8～32",
+      "命中+20",
+      "AGI-12"
+    ],
+    "obtain": [
+      "テルミラガチャ"
+    ],
+    "price": {}
+  },
+  {
+    "id": "swd195",
+    "name": "神威ディエチソード",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "1~70",
+    "attrs": {
+      "DMG": "66",
+      "DELAY": "52",
+      "D/D": "1.269"
+    },
+    "affix": [
+      "攻+23",
+      "STR8～34",
+      "命中+21",
+      "絶撃の襲"
+    ],
+    "obtain": [
+      "テルミラガチャ"
+    ],
+    "price": {}
+  },
+  {
+    "id": "swd196",
+    "name": "堕神ディエチソード",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "1~70",
+    "attrs": {
+      "DMG": "68",
+      "DELAY": "52",
+      "D/D": "1.308"
+    },
+    "affix": [
+      "攻+25",
+      "STR8～36",
+      "命中+23",
+      "AGI-22",
+      "絶撃の襲"
+    ],
+    "obtain": [
+      "テルミラガチャ"
+    ],
+    "price": {}
+  },
+  {
+    "id": "swd197",
+    "name": "グラチェソード",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "1~70",
+    "attrs": {
+      "DMG": "45",
+      "DELAY": "55",
+      "D/D": "0.818"
+    },
+    "affix": [
+      "敵意+5",
+      "VIT8～29",
+      "HP+130"
+    ],
+    "obtain": [
+      "テルミラガチャ"
+    ],
+    "price": {}
+  },
+  {
+    "id": "swd198",
+    "name": "祝礼グラチェソード",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "1~70",
+    "attrs": {
+      "DMG": "45",
+      "DELAY": "55",
+      "D/D": "0.818"
+    },
+    "affix": [
+      "敵意+5",
+      "VIT8～33",
+      "HP+140"
+    ],
+    "obtain": [
+      "テルミラガチャ"
+    ],
+    "price": {}
+  },
+  {
+    "id": "swd199",
+    "name": "契約グラチェソード",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "1~70",
+    "attrs": {
+      "DMG": "45",
+      "DELAY": "55",
+      "D/D": "0.818"
+    },
+    "affix": [
+      "敵意+6",
+      "VIT8～35",
+      "HP+150",
+      "DEX-9"
+    ],
+    "obtain": [
+      "テルミラガチャ"
+    ],
+    "price": {}
+  },
+  {
+    "id": "swd200",
+    "name": "神威グラチェソード",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "1~70",
+    "attrs": {
+      "DMG": "45",
+      "DELAY": "55",
+      "D/D": "0.818"
+    },
+    "affix": [
+      "敵意+8",
+      "VIT8～39",
+      "HP+170",
+      "反射の儀"
+    ],
+    "obtain": [
+      "テルミラガチャ"
+    ],
+    "price": {}
+  },
+  {
+    "id": "swd201",
+    "name": "堕神グラチェソード",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "1~70",
+    "attrs": {
+      "DMG": "45",
+      "DELAY": "55",
+      "D/D": "0.818"
+    },
+    "affix": [
+      "敵意+9",
+      "VIT8～41",
+      "HP+180",
+      "DEX-21",
+      "反射の儀"
+    ],
+    "obtain": [
+      "テルミラガチャ"
+    ],
+    "price": {}
+  },
+  {
+    "id": "swd202",
+    "name": "エーレブロード",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "1~70",
+    "attrs": {
+      "DMG": "60",
+      "DELAY": "56",
+      "D/D": "1.071"
+    },
+    "affix": [
+      "攻撃妨害+8",
+      "Cnt+6%",
+      "P:HP吸収"
+    ],
+    "obtain": [
+      "テルミラガチャ"
+    ],
+    "price": {}
+  },
+  {
+    "id": "swd203",
+    "name": "祝礼エーレブロード",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "1~70",
+    "attrs": {
+      "DMG": "64",
+      "DELAY": "56",
+      "D/D": "1.143"
+    },
+    "affix": [
+      "攻撃妨害+8",
+      "Cnt+6%",
+      "P:HP吸収"
+    ],
+    "obtain": [
+      "テルミラガチャ"
+    ],
+    "price": {}
+  },
+  {
+    "id": "swd204",
+    "name": "契約エーレブロード",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "1~70",
+    "attrs": {
+      "DMG": "66",
+      "DELAY": "56",
+      "D/D": "1.179"
+    },
+    "affix": [
+      "攻撃妨害+8",
+      "Cnt+7%",
+      "P:HP吸収",
+      "STR-7"
+    ],
+    "obtain": [
+      "テルミラガチャ"
+    ],
+    "price": {}
+  },
+  {
+    "id": "swd205",
+    "name": "神威エーレブロード",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "1~70",
+    "attrs": {
+      "DMG": "70",
+      "DELAY": "56",
+      "D/D": "1.250"
+    },
+    "affix": [
+      "攻撃妨害+9",
+      "Cnt+8%",
+      "P:HP吸収",
+      "救助の襲"
+    ],
+    "obtain": [
+      "テルミラガチャ"
+    ],
+    "price": {}
+  },
+  {
+    "id": "swd206",
+    "name": "堕神エーレブロード",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "1~70",
+    "attrs": {
+      "DMG": "72",
+      "DELAY": "56",
+      "D/D": "1.286"
+    },
+    "affix": [
+      "攻撃妨害+9",
+      "Cnt+9%",
+      "P:HP吸収",
+      "救助の襲",
+      "STR-15"
+    ],
+    "obtain": [
+      "テルミラガチャ"
+    ],
+    "price": {}
+  },
+  {
+    "id": "swd207",
+    "name": "プリモブロード",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "1~70",
+    "attrs": {
+      "DMG": "69",
+      "DELAY": "61",
+      "D/D": "1.131"
+    },
+    "affix": [
+      "STR7～33",
+      "DEX7～33",
+      "Cnt+8%"
+    ],
+    "obtain": [
+      "テルミラガチャ"
+    ],
+    "price": {}
+  },
+  {
+    "id": "swd208",
+    "name": "祝礼プリモブロード",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "1~70",
+    "attrs": {
+      "DMG": "70",
+      "DELAY": "61",
+      "D/D": "1.148"
+    },
+    "affix": [
+      "STR7～37",
+      "DEX7～37",
+      "Cnt+8%"
+    ],
+    "obtain": [
+      "テルミラガチャ"
+    ],
+    "price": {}
+  },
+  {
+    "id": "swd209",
+    "name": "契約プリモブロード",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "1~70",
+    "attrs": {
+      "DMG": "72",
+      "DELAY": "61",
+      "D/D": "1.180"
+    },
+    "affix": [
+      "STR7～40",
+      "DEX7～40",
+      "Cnt+9%",
+      "防-10"
+    ],
+    "obtain": [
+      "テルミラガチャ"
+    ],
+    "price": {}
+  },
+  {
+    "id": "swd210",
+    "name": "神威プリモブロード",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "1~70",
+    "attrs": {
+      "DMG": "75",
+      "DELAY": "61",
+      "D/D": "1.230"
+    },
+    "affix": [
+      "STR7～44",
+      "DEX7～44",
+      "Cnt+11%",
+      "遅撃の襲"
+    ],
+    "obtain": [
+      "テルミラガチャ"
+    ],
+    "price": {}
+  },
+  {
+    "id": "swd211",
+    "name": "堕神プリモブロード",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "1~70",
+    "attrs": {
+      "DMG": "77",
+      "DELAY": "61",
+      "D/D": "1.262"
+    },
+    "affix": [
+      "STR7～47",
+      "DEX7～47",
+      "Cnt+12%",
+      "防-21",
+      "遅撃の襲"
+    ],
+    "obtain": [
+      "テルミラガチャ"
+    ],
+    "price": {}
+  },
+  {
+    "id": "swd211",
+    "name": "カイスブロード",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "1~70",
+    "attrs": {
+      "DMG": "9~62",
+      "DELAY": "57",
+      "D/D": "-"
+    },
+    "affix": [
+      "STR7～55",
+      "VIT14～55",
+      "反撃+7"
+    ],
+    "obtain": [
+      "テルミラガチャ"
+    ],
+    "price": {}
+  },
+  {
+    "id": "swd211",
+    "name": "アウロソード",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "1~70",
+    "attrs": {
+      "DMG": "9~62",
+      "DELAY": "51",
+      "D/D": "-"
+    },
+    "affix": [
+      "VIT14～60",
+      "敵意+5",
+      "Cnt+7%"
+    ],
+    "obtain": [
+      "テルミラガチャ"
+    ],
+    "price": {}
+  },
+  {
+    "id": "swd211",
+    "name": "アグニブロード",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "1~80",
+    "attrs": {
+      "DMG": "9~73",
+      "DELAY": "53",
+      "D/D": "-"
+    },
+    "affix": [
+      "VIT14～76",
+      "反撃+10",
+      "全防+22",
+      "HP+150"
+    ],
+    "obtain": [
+      "テルミラガチャ"
+    ],
+    "price": {}
+  },
+  {
+    "id": "swd211",
+    "name": "キンセブロード",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "1~80",
+    "attrs": {
+      "DMG": "8~80",
+      "DELAY": "57",
+      "D/D": "-"
+    },
+    "affix": [
+      "STR9～80",
+      "VIT9～80",
+      "敵意+10"
+    ],
+    "obtain": [
+      "テルミラガチャ"
+    ],
+    "price": {}
+  },
+    {
+    "id": "swd211",
+    "name": "セイズブロード",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "1~80",
+    "attrs": {
+      "DMG": "8~85",
+      "DELAY": "63",
+      "D/D": "-"
+    },
+    "affix": [
+      "STR9～95",
+      "反撃+11",
+      "HP+170",
+      "盾防率UP"
+    ],
+    "obtain": [
+      "テルミラガチャ"
+    ],
+    "price": {}
+  },
+  {
+    "id": "swd211",
+    "name": "リュシソード",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "1~85",
+    "attrs": {
+      "DMG": "8~90",
+      "DELAY": "63",
+      "D/D": "-"
+    },
+    "affix": [
+      "STR9～110",
+      "VIT9~110",
+      "全防+80",
+      "Cnt+15%"
+    ],
+    "obtain": [
+      "テルミラガチャ"
+    ],
+    "price": {}
+  },
+  {
+    "id": "swd211",
+    "name": "レキトスパーダ",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "1~85",
+    "attrs": {
+      "DMG": "9~92",
+      "DELAY": "65",
+      "D/D": "-"
+    },
+    "affix": [
+      "STR9～112",
+      "DEX9～112",
+      "敵意+10"
+    ],
+    "obtain": [
+      "テルミラガチャ"
+    ],
+    "price": {}
+  },
+  {
+    "id": "swd211",
+    "name": "クープエスパダ",
+    "category": "長剣",
+    "R/N": "N",
+    "level": "1~90",
+    "attrs": {
+      "DMG": "11~100",
+      "DELAY": "55",
+      "D/D": "-"
+    },
+    "affix": [
+      "VIT/WIL/魔抵11～122",
+      "敵意+15",
+      "反撃+20"
+    ],
+    "obtain": [
+      "テルミラガチャ"
+    ],
+    "price": {}
   }
 ]
